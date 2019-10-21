@@ -95,9 +95,7 @@ $(() => {
        atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington
     ];
 
-    const infectionCardsDiscard = [
-
-    ];
+    let infectionCardsDiscard = [];
 
     // const infect = () => {
     //     infectionCardsDeck[0].
@@ -106,11 +104,12 @@ $(() => {
     const epidemic = {
         type: 'epidemic', 
         epidemic:()=>{
-            infectionRate.shift();
-            const bottomInfectionCard = infectionCardsDeck[infectionsCardDeck.length]
-            infect(bottomInfectionCard)
-            infect(bottomInfectionCard)
-            infect(bottomInfectionCard)
+            infectionRate.shift(); //removes first value in infectionRate so that infectionRate[0] changes to  the next number
+            const bottomInfectionCardIndex  = (infectionCardsDeck.length);
+            const bottomInfectionCard = infectionCardsDeck[bottomInfectionCardIndex];
+            // infect(bottomInfectionCard)
+            // infect(bottomInfectionCard)
+            // infect(bottomInfectionCard)
             infectionCardsDiscard.push(bottomInfectionCard);
             shuffle(infectionCardsDiscard);
             infectionCardsDeck.push(infectionCardsDiscard);
@@ -136,12 +135,24 @@ $(() => {
             playerCards.push(epidemic)
         }
         shuffle(playerCards);
-        console.log(playerOneHand);
-        console.log(playerTwoHand);
-        console.log(playerCards);
+        // console.log(playerOneHand);
+        // console.log(playerTwoHand);
+        // console.log(playerCards);
+        // playerTurn()
     }
-
-    const drawCards = () => {
+    console.log(playerCards);
+    console.log(playerOneHand);
+    const drawCards = (player) => {
+        if(playerCards[0].type === 'epidemic'){
+            console.log('epidemic!');
+            epidemic.epidemic();
+            
+        } else{
+            player.push(playerCards[0]);
+            playerCards.shift();
+        }
+            console.log(playerCards);
+            console.log(playerOneHand);
 
     }
 
@@ -151,12 +162,20 @@ $(() => {
         }
     }
 
-    const playerTurn = () => {
-        drawCards();
-        infectPhase();
-    }
+    // const playerTurn = () => {
+    //     if (turnCount%2 === 0){
+    //         //four actions
+    //         drawCards(playerOneHand);
+    //         infectPhase();
+    //     } else{
+    //         drawCards(playerTwoHand);
+    //         infectPhase();
+    //     }
+        
+    // }
 
-    startGame();
+    // startGame();
+    drawCards(playerOneHand);
 });
 
 
