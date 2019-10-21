@@ -13,7 +13,7 @@ const shuffle = (array) => { //knuth shuffle function
 
 $(() => {
     let turnCount = 0;
-    const infectionRate = [2,2,2,3,3,4,4];
+    const infectionRate = [2, 2, 2, 3, 3, 4, 4];
     const currentInfectionRate = infectionRate[0];
     let outbreakCount = 0;
     let blueUnitsRemaining = 24;
@@ -21,54 +21,54 @@ $(() => {
     let yellowUnitsRemaining = 24;
     let redUnitsRemaining = 24;
     
-    const atlanta = {color: 'blue', researchStation: true, moveOptions: ['chicago', 'washington', 'miami']};
-    const essen = {color: 'blue', researchStation: false, moveOptions: ['london', 'milan', 'paris', 'stPetersburg']};
-    const paris = {color: 'blue', researchStation: false, moveOptions: ['algiers', 'madrid', 'london', 'essen', 'milan']};
-    const sanFrancisco = {color: 'blue', researchStation: false, moveOptions: ['losAngeles', 'chicago', 'tokyo', 'manila']};
-    const stPetersburg = {color: 'blue', researchStation: false, moveOptions: ['essen', 'istanbul', 'moscow']};
-    const milan = {color: 'blue', researchStation: false, moveOptions: ['essen', 'paris', 'istanbul']};
-    const madrid = {color: 'blue', researchStation: false, moveOptions: ['london', 'paris', 'algiers', 'newYork', 'saoPaulo']};
-    const london = {color: 'blue', researchStation: false, moveOptions: ['essen', 'paris', 'madrid', 'newYork']};
-    const montreal = {color: 'blue', researchStation: false, moveOptions: ['chicago', 'washington', 'newYork']};
-    const newYork = {color: 'blue', researchStation: false, moveOptions: ['london', 'madrid', 'washington', 'montreal']};
-    const chicago = {color: 'blue', researchStation: false, moveOptions: ['montreal', 'atlanta', 'mexicoCity', 'losAngeles', 'sanFrancisco']};
-    const washington = {color: 'blue', researchStation: false, moveOptions: ['newYork', 'montreal', 'atlanta', 'miami']};
-    const algiers = {color: 'black', researchStation: false, moveOptions: ['madrid', 'paris', 'istanbul', 'cairo']};
-    const chennai = {color: 'black', researchStation: false, moveOptions: ['mumbai', 'dehli', 'kolkata', 'bangkok', 'jakarta']};
-    const mumbai = {color: 'black', researchStation: false, moveOptions: ['karachi', 'delhi', 'chennai']};
-    const karachi = {color: 'black', researchStation: false, moveOptions: ['riyadh', 'baghdad', 'tehran', 'delhi', 'mumbai']};
-    const baghdad = {color: 'black', researchStation: false, moveOptions: ['istanbul', 'cairo', 'reyadh', 'karachi', 'tehran']};
-    const delhi = {color: 'black', researchStation: false, moveOptions: ['kolkata', 'chennai', 'mumbai', 'karachi', 'tehran']};
-    const cairo = {color: 'black', researchStation: false, moveOptions: ['algiers', 'istanbul', 'baghdad', 'riyadh', 'khartoum']};
-    const moscow = {color: 'black', researchStation: false, moveOptions: ['stPetersburg', 'istanbul', 'tehran']};
-    const kolkata = {color: 'black', researchStation: false, moveOptions: ['dehli', 'chennai', 'bangkok', 'hongKong']};
-    const riyadh = {color: 'black', researchStation: false, moveOptions: ['cairo', 'baghdad', 'karachi']};
-    const istanbul = {color: 'black', researchStation: false, moveOptions: ['milan', 'stPetersburg', 'moscow', 'baghdad', 'cairo', 'algiers']};
-    const tehran = {color: 'black', researchStation: false, moveOptions: ['moscow', 'baghdad', 'karachi', 'delhi']};
-    const lima = {color: 'yellow', researchStation: false, moveOptions: ['mexicoCity', 'bogota', 'santiago']};
-    const santiago = {color: 'yellow', researchStation: false, moveOptions: ['lima']};
-    const buenosAires = {color: 'yellow', researchStation: false, moveOptions: ['bogota', 'saoPaulo']};
-    const khartoum = {color: 'yellow', researchStation: false, moveOptions: ['lagos', 'kinshasa', 'johannesburg', 'cairo']};
-    const saoPaulo = {color: 'yellow', researchStation: false, moveOptions: ['buenosAires', 'bogota', 'madrid', 'lagos']};
-    const johannesburg = {color: 'yellow', researchStation: false, moveOptions: ['kinshasa', 'khartoum']};
-    const miami = {color: 'yellow', researchStation: false, moveOptions: ['washington', 'atlanta', 'mexicoCity', 'bogota']};
-    const lagos = {color: 'yellow', researchStation: false, moveOptions: ['khartoum', 'kinshasa', 'saoPaulo']};
-    const kinshasa = {color: 'yellow', researchStation: false, moveOptions: ['lagos', 'khartoum', 'johannesburg']};
-    const mexicoCity = {color: 'yellow', researchStation: false, moveOptions: ['losAngeles', 'chicago', 'miami', 'bogota', 'lima']};
-    const bogota = {color: 'yellow', researchStation: false, moveOptions: ['miami', 'mexicoCity', 'lima', 'buenosAires', 'saoPaulo']};
-    const losAngeles = {color: 'yellow', researchStation: false, moveOptions: ['sanFrancisco', 'chicago', 'mexicoCity', 'sydney']};
-    const manila = {color: 'red', researchStation: false, moveOptions: ['sydney', 'sanFrancisco', 'taipei', 'hongKong', 'hoChiMinhCity']};
-    const jakarta = {color: 'red', researchStation: false, moveOptions: ['chennai', 'bangkok', 'hoChiMinhCity', 'sydney']};
-    const bangkok = {color: 'red', researchStation: false, moveOptions: ['hongKong', 'hoChiMinhCity', 'jakarta', 'chennai', 'kolkata']};
-    const hoChiMinhCity = {color: 'red', researchStation: false, moveOptions: ['jakarta', 'bangkok', 'hongKong', 'manila']};
-    const osaka = {color: 'red', researchStation: false, moveOptions: ['tokyo', 'taipei']};
-    const sydney = {color: 'red', researchStation: false, moveOptions: ['losAngeles', 'manila', 'jakarta']};
-    const tokyo = {color: 'red', researchStation: false, moveOptions: ['osaka', 'sanFrancisco', 'seoul', 'shanghai']};
-    const shanghai = {color: 'red', researchStation: false, moveOptions: ['beijing', 'seoul', 'tokyo', 'taipei', 'hongKong']};
-    const taipei = {color: 'red', researchStation: false, moveOptions: ['osaka', 'manila', 'hongKong', 'shanghai']};
-    const beijing = {color: 'red', researchStation: false, moveOptions: ['seoul', 'shanghai']};
-    const hongKong = {color: 'red', researchStation: false, moveOptions: ['shanghai', 'taipei', 'manila', 'hoChiMinhCity', 'bangkok', 'kolkata']};
-    const seoul = {color: 'red', researchStation: false, moveOptions: ['tokyo', 'shanghai', 'beijing']};
+    const atlanta = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: true, moveOptions: ['chicago', 'washington', 'miami']};
+    const essen = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['london', 'milan', 'paris', 'stPetersburg']};
+    const paris = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['algiers', 'madrid', 'london', 'essen', 'milan']};
+    const sanFrancisco = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['losAngeles', 'chicago', 'tokyo', 'manila']};
+    const stPetersburg = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['essen', 'istanbul', 'moscow']};
+    const milan = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['essen', 'paris', 'istanbul']};
+    const madrid = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['london', 'paris', 'algiers', 'newYork', 'saoPaulo']};
+    const london = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['essen', 'paris', 'madrid', 'newYork']};
+    const montreal = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['chicago', 'washington', 'newYork']};
+    const newYork = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['london', 'madrid', 'washington', 'montreal']};
+    const chicago = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['montreal', 'atlanta', 'mexicoCity', 'losAngeles', 'sanFrancisco']};
+    const washington = {color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['newYork', 'montreal', 'atlanta', 'miami']};
+    const algiers = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['madrid', 'paris', 'istanbul', 'cairo']};
+    const chennai = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['mumbai', 'dehli', 'kolkata', 'bangkok', 'jakarta']};
+    const mumbai = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['karachi', 'delhi', 'chennai']};
+    const karachi = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['riyadh', 'baghdad', 'tehran', 'delhi', 'mumbai']};
+    const baghdad = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['istanbul', 'cairo', 'reyadh', 'karachi', 'tehran']};
+    const delhi = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['kolkata', 'chennai', 'mumbai', 'karachi', 'tehran']};
+    const cairo = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['algiers', 'istanbul', 'baghdad', 'riyadh', 'khartoum']};
+    const moscow = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['stPetersburg', 'istanbul', 'tehran']};
+    const kolkata = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['dehli', 'chennai', 'bangkok', 'hongKong']};
+    const riyadh = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['cairo', 'baghdad', 'karachi']};
+    const istanbul = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['milan', 'stPetersburg', 'moscow', 'baghdad', 'cairo', 'algiers']};
+    const tehran = {color: 'black', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['moscow', 'baghdad', 'karachi', 'delhi']};
+    const lima = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['mexicoCity', 'bogota', 'santiago']};
+    const santiago = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['lima']};
+    const buenosAires = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['bogota', 'saoPaulo']};
+    const khartoum = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['lagos', 'kinshasa', 'johannesburg', 'cairo']};
+    const saoPaulo = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['buenosAires', 'bogota', 'madrid', 'lagos']};
+    const johannesburg = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['kinshasa', 'khartoum']};
+    const miami = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['washington', 'atlanta', 'mexicoCity', 'bogota']};
+    const lagos = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['khartoum', 'kinshasa', 'saoPaulo']};
+    const kinshasa = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['lagos', 'khartoum', 'johannesburg']};
+    const mexicoCity = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['losAngeles', 'chicago', 'miami', 'bogota', 'lima']};
+    const bogota = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['miami', 'mexicoCity', 'lima', 'buenosAires', 'saoPaulo']};
+    const losAngeles = {color: 'yellow', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['sanFrancisco', 'chicago', 'mexicoCity', 'sydney']};
+    const manila = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['sydney', 'sanFrancisco', 'taipei', 'hongKong', 'hoChiMinhCity']};
+    const jakarta = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['chennai', 'bangkok', 'hoChiMinhCity', 'sydney']};
+    const bangkok = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['hongKong', 'hoChiMinhCity', 'jakarta', 'chennai', 'kolkata']};
+    const hoChiMinhCity = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['jakarta', 'bangkok', 'hongKong', 'manila']};
+    const osaka = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['tokyo', 'taipei']};
+    const sydney = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['losAngeles', 'manila', 'jakarta']};
+    const tokyo = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['osaka', 'sanFrancisco', 'seoul', 'shanghai']};
+    const shanghai = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['beijing', 'seoul', 'tokyo', 'taipei', 'hongKong']};
+    const taipei = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['osaka', 'manila', 'hongKong', 'shanghai']};
+    const beijing = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['seoul', 'shanghai']};
+    const hongKong = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['shanghai', 'taipei', 'manila', 'hoChiMinhCity', 'bangkok', 'kolkata']};
+    const seoul = {color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['tokyo', 'shanghai', 'beijing']};
 
     const playerCards = [
         {
@@ -313,9 +313,28 @@ $(() => {
 
     let infectionCardsDiscard = [];
 
-    // const infect = () => {
-    //     infectionCardsDeck[0].
-    // }
+    const outbreak = (country) => {
+        outbreakCount ++;
+        if (outbreakCount >= 8) {
+            alert('the world has lost! too many outbreaks!')
+        } else {
+            for(let i=0; i<country.moveOptions.length; i++){
+                const outbreakCountry = country.moveOptions[i].valueOf();
+                const outbreakDiseaseTargeted = `${country.color.valueOf()}+Units`;
+                const outbreakEffect = outbreakCountry.outbreakDiseaseTargeted;
+                outbreakEffect ++;
+            }
+        }
+    }
+
+    const checkForOutbreak = (city) => {
+
+    }
+
+    const infect = () => {
+        // infectionCardsDeck[0].
+    }
+
 
     const epidemic = {
         type: 'epidemic', 
@@ -363,6 +382,8 @@ $(() => {
             epidemic.epidemic();
             
         } else{
+            player.push(playerCards[0]);
+            playerCards.shift();
             player.push(playerCards[0]);
             playerCards.shift();
         }
