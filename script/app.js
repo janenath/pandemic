@@ -9,8 +9,7 @@ const shuffle = (array) => { //knuth shuffle function
         array[i] = array[j]
         array[j] = temp
     }
-    }
-
+}
 
 $(() => {
     let turnCount = 0;
@@ -100,13 +99,19 @@ $(() => {
 
     ];
 
+    // const infect = () => {
+    //     infectionCardsDeck[0].
+    // }
+
     const epidemic = {
         type: 'epidemic', 
         epidemic:()=>{
             infectionRate.shift();
-            infect(infectionCardsDeck[infectionCardsDeck.length])
-            infect(infectionCardsDeck[infectionCardsDeck.length])
-            infect(infectionCardsDeck[infectionCardsDeck.length])
+            const bottomInfectionCard = infectionCardsDeck[infectionsCardDeck.length]
+            infect(bottomInfectionCard)
+            infect(bottomInfectionCard)
+            infect(bottomInfectionCard)
+            infectionCardsDiscard.push(bottomInfectionCard);
             shuffle(infectionCardsDiscard);
             infectionCardsDeck.push(infectionCardsDiscard);
             infectionCardsDiscard = [];
@@ -130,6 +135,7 @@ $(() => {
         for (let i=0; i<4; i++){ //adds epidemic event cards to player deck
             playerCards.push(epidemic)
         }
+        shuffle(playerCards);
         console.log(playerOneHand);
         console.log(playerTwoHand);
         console.log(playerCards);
@@ -139,10 +145,16 @@ $(() => {
 
     }
 
-    const infectCities = () => {
-
+    const infectPhase = () => {
+        for(let i=0; i<currentInfectionRate; i++){
+            
+        }
     }
 
+    const playerTurn = () => {
+        drawCards();
+        infectPhase();
+    }
 
     startGame();
 });
@@ -154,8 +166,9 @@ QUESTIONS:
 
 
 FUTURE GOALS:
--add event cards
+-have epidemic cards assigned evenly into player deck
 -adjust game difficulty (start with 4, 5, or 6 epidemic cards)
+-add event cards
 -ability to choose 2-4 players
 -adding in player roles (special abilities)
 */
