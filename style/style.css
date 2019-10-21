@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+}
+h1 {
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+img{
+    width: 100%;
+}
