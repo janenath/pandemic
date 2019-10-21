@@ -1,7 +1,7 @@
-#Pandemic
-##Pandemic Strategy Game
+#Pandemic#
+##Pandemic Strategy Game##
 
-####based on the board game Pandemic by Matt Leacock, &copy; 2019, Z-Man Games
+####based on the board game Pandemic by Matt Leacock, &copy; 2019, Z-Man Games####
 
 **Do you have what it takes to save humanity?**
 
