@@ -1,10 +1,10 @@
 # Pandemic
 ## Pandemic Strategy Game
 
-#### based on the board game Pandemic by Matt Leacock, &copy; 2019, Z-Man Games
-___
-**Do you have what it takes to save humanity?**
+*based on the board game Pandemic by Matt Leacock, &copy; 2019, Z-Man Games*
 
+**Do you have what it takes to save humanity?**
+___
 ![Pandemic Box](/img/pandemic_box.png)
 ___
 Pandemic is a cooperative strategy game where 2-4 players work to cure four dangerous diseases before they take over the world. 
