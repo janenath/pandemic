@@ -1,3 +1,17 @@
+const shuffle = (array) => { //knuth shuffle function
+    let i = 0
+    let j = 0
+    let temp = null
+    
+    for (i = array.length - 1; i > 0; i -= 1) {
+        j = Math.floor(Math.random() * (i + 1))
+        temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    }
+    }
+
+
 $(() => {
     let turnCount = 0;
     const infectionRate = [2,2,2,3,3,4,4];
@@ -21,11 +35,7 @@ $(() => {
     const chicago = {color: 'blue', researchStation: false, moveOptions: ['montreal', 'atlanta', 'mexicoCity', 'losAngeles', 'sanFrancisco']};
     const washington = {color: 'blue', researchStation: false, moveOptions: ['newYork', 'montreal', 'atlanta', 'miami']};
 
-    const playerCards = [{
-        type: 'city',
-        name: 'atlanta',
-        color: 'blue'
-        },
+    const playerCards = [
         {
         type: 'city',
         name: 'essen',
@@ -82,36 +92,43 @@ $(() => {
         color: 'blue'
         },      
     ];
-    const infectionCards = [
+    const infectionCardsDeck = [
        atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington
     ];
+
+    const infectionCardsDiscard = [
+
+    ];
+
+    const epidemic = {
+        type: 'epidemic', 
+        epidemic:()=>{
+            infectionRate.shift();
+            infect(infectionCardsDeck[infectionCardsDeck.length])
+            infect(infectionCardsDeck[infectionCardsDeck.length])
+            infect(infectionCardsDeck[infectionCardsDeck.length])
+            shuffle(infectionCardsDiscard);
+            infectionCardsDeck.push(infectionCardsDiscard);
+            infectionCardsDiscard = [];
+        }
+}
 
     const playerOneHand = [];
     const playerTwoHand = [];
 
-    const shuffle = (array) => { //knuth shuffle function
-        let i = 0
-        let j = 0
-        let temp = null
-      
-        for (i = array.length - 1; i > 0; i -= 1) {
-          j = Math.floor(Math.random() * (i + 1))
-          temp = array[i]
-          array[i] = array[j]
-          array[j] = temp
-        }
-      }
-
     const startGame = () => {
         shuffle(playerCards);
-        shuffle(infectionCards);
-        for (let i=0; i<4; i++){
+        shuffle(infectionCardsDeck);
+        for (let i=0; i<4; i++){ //deals 4 cards to player 1, removes them from player deck
             playerOneHand.push(playerCards[i]);
             playerCards.splice(i, 1);
         }
-        for (let i=0; i<4; i++){
+        for (let i=0; i<4; i++){ //deals 4 cards to player 2, removes them from player deck
             playerTwoHand.push(playerCards[i]);
             playerCards.splice(i, 1);
+        }
+        for (let i=0; i<4; i++){ //adds epidemic event cards to player deck
+            playerCards.push(epidemic)
         }
         console.log(playerOneHand);
         console.log(playerTwoHand);
@@ -129,3 +146,16 @@ $(() => {
 
     startGame();
 });
+
+
+/*
+QUESTIONS:
+
+
+
+FUTURE GOALS:
+-add event cards
+-adjust game difficulty (start with 4, 5, or 6 epidemic cards)
+-ability to choose 2-4 players
+-adding in player roles (special abilities)
+*/
