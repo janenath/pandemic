@@ -13,7 +13,6 @@ const shuffle = (array) => { //knuth shuffle function
 
 $(() => {
 
-
     let turnCount = 0;
     const infectionRate = [2, 2, 2, 3, 3, 4, 4];
     const currentInfectionRate = infectionRate[0];
@@ -73,238 +72,191 @@ $(() => {
     const seoul = {name: 'Seoul', class: 'seoul', color: 'red', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['tokyo', 'shanghai', 'beijing']};
 
     const playerCards = [
-        {
-        type: 'city',
+        {type: 'city',
         name: 'essen',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'paris',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'sanFrancisco',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'stPetersburg',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'milan',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'madrid',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'london',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'montreal',
         color: 'blue'
         },   
-        {
-        type: 'city',
+        {type: 'city',
         name: 'newYork',
         color: 'blue'
         },
-        {
-        type: 'city',
+        {type: 'city',
         name: 'chicago',
         color: 'blue'
         },  
-        {
-        type: 'city',
+        {type: 'city',
         name: 'washington',
         color: 'blue'
         }, 
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'algiers',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'chennai',
         color: 'black'
         },        
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'mumbai',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'karachi',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'baghdad',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'delhi',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'cairo',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'moscow',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'kolkata',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'riyadh',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'istanbul',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'tehran',
         color: 'black'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'losAngeles',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'bogota',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'mexicoCity',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'kinshasa',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'lagos',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'miami',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'johannesburg',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'saoPaulo',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'khartoum',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'buenosAires',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'santiago',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'lima',
         color: 'yellow'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'seoul',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'hongKong',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'beijing',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'taipei',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'shanghai',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'tokyo',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'sydney',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'osaka',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'hoChiMinhCity',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'bangkok',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'jakarta',
         color: 'red'
         },
-        {  
-        type: 'city',
+        {type: 'city',
         name: 'manila',
         color: 'red'
         },
@@ -318,25 +270,14 @@ $(() => {
        atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington, tehran, istanbul, riyadh, kolkata, moscow, cairo, delhi, baghdad, karachi, mumbai, chennai, algiers, lima, santiago, buenosAires, khartoum, saoPaulo, johannesburg, miami, lagos, kinshasa, mexicoCity, bogota, losAngeles, manila, jakarta, bangkok, hoChiMinhCity, osaka, sydney, tokyo, shanghai, taipei, beijing, hongKong, seoul
     ];
 
-    let infectionCardsDiscard = [];
+    const $cityCards = [];
 
-    const $map = $('<div>').attr('id', 'map');
-    $('body').append($map);
-
-    for(let i=0; i<cityList.length; i++){
-        const $addCity = () => {
-            const $cityName = cityList[i].name;
-            const $cityClass = cityList[i].class;
-            const $cityColor = cityList[i].color;
-            console.log($cityClass);
-            const $eachCity = $('<div>').addClass($cityClass).addClass($cityColor).addClass('city').text($cityName);
-            $map.append($eachCity);
-        }
-        $addCity();
+    for (let i=0; i<playerCards.length; i++){
+        const $cityCard = $('<div>').addClass('card').addClass(playerCards[i].color).text(playerCards[i].name);
+        $cityCards.push($cityCard);
     }
 
-
-
+    let infectionCardsDiscard = [];
 
     const outbreak = (country) => {
         outbreakCount ++;
@@ -380,24 +321,29 @@ $(() => {
     const playerOneHand = [];
     const playerTwoHand = [];
 
+    const $handOne = $('.handOne');
+    const $handTwo = $('.handTwo');
+
     const startGame = () => {
-        shuffle(playerCards);
+        shuffle($cityCards);
         shuffle(infectionCardsDeck);
         for (let i=0; i<4; i++){ //deals 4 cards to player 1, removes them from player deck
-            playerOneHand.push(playerCards[i]);
-            playerCards.splice(i, 1);
+            playerOneHand.push($cityCards[i]);
+            $cityCards.splice(i, 1);
         }
         for (let i=0; i<4; i++){ //deals 4 cards to player 2, removes them from player deck
-            playerTwoHand.push(playerCards[i]);
-            playerCards.splice(i, 1);
+            playerTwoHand.push($cityCards[i]);
+            $cityCards.splice(i, 1);
         }
         for (let i=0; i<4; i++){ //adds epidemic event cards to player deck
-            playerCards.push(epidemic)
+            $cityCards.push(epidemic)
         }
-        shuffle(playerCards);
-        // console.log(playerOneHand);
-        // console.log(playerTwoHand);
-        // console.log(playerCards);
+        shuffle($cityCards);
+        console.log(playerOneHand);
+        console.log(playerTwoHand);
+        $($handOne).append(playerOneHand);
+        $($handTwo).append(playerTwoHand);
+
         // playerTurn()
     }
 

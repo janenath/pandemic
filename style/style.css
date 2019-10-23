@@ -2,37 +2,125 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    font-family: arial;
+    font-size: 20px;
 }
-
 h1 {
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
-    font-size: 72px;
+    margin: 0;
+    font-size: 4vw;
 }
-#map {
-    background-image:url(../img/worldmap.png);
-    background-size: auto;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 100%;
+h2 {
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+    margin: 0;
+    font-size: 3vw;
+}
+.container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
     height: 100%;
+    width: 100%;
 }
-.city {
-    position: relative;
-    font-family: arial;
-    font-size: 1vw;
-    display: inline;
+.left {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-template-rows: 80% 20%;
+    justify-self: center;
+    border: 5px rgb(51,51,51) solid;
+    width: 99%;
 }
-
-.yellow {
-    border: 3px yellow solid;
+.handOne {
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
-.blue {
-    border: 3px blue solid;
+.playerOne {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.middle {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-template-rows: 30% 1fr 40%;
+    justify-self: center;
+    border: 5px rgb(51,51,51) solid;
+    padding: 10px;
+    width: 96%;
+}
+.map {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.table {
+    border: 5px rgb(51,51,51) solid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: center;
+}
+table {
+    width: 100%;
+    height: auto;
+}
+.bottom {
+    display: grid;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.bottomLeft {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.bottomMiddle {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.bottomRight {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.right {
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-template-rows: 80% 20%;
+    justify-self: center;
+    border: 5px rgb(51,51,51) solid;
+    width: 99%;
+}
+.handTwo {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.playerTwo {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.card {
+    width: 50%;
+    height: 20%;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    border: 5px white solid;
 }
 .red {
-    border: 3px red solid;
+    background: rgb(160,83,77);
+}
+.blue {
+    background: rgb(95,119,158);
+}
+.yellow {
+    background: rgb(219,191,106);
 }
 .black {
-    border: 3px black solid;
+    background: rgb(51,51,51);
 }
