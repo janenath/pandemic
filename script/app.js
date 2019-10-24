@@ -266,13 +266,211 @@ $(() => {
         },
     ];
 
+    const infectionCards = [
+        {type: 'city',
+        name: 'Essen',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'Paris',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'San Francisco',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'St. Petersburg',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'Milan',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'Madrid',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'London',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'Montréal',
+        color: 'blue'
+        },   
+        {type: 'city',
+        name: 'New York',
+        color: 'blue'
+        },
+        {type: 'city',
+        name: 'Chicago',
+        color: 'blue'
+        },  
+        {type: 'city',
+        name: 'Washington',
+        color: 'blue'
+        }, 
+        {type: 'city',
+        name: 'Algiers',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Chennai',
+        color: 'black'
+        },        
+        {type: 'city',
+        name: 'Mumbai',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Karachi',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Baghdad',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Delhi',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Cairo',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Moscow',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Kolkata',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Riyadh',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Istanbul',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Tehran',
+        color: 'black'
+        },
+        {type: 'city',
+        name: 'Los Angeles',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Bogotá',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Mexico City',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Kinshasa',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Lagos',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Miami',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Johannesburg',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Sao Paulo',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Khartoum',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Buenos Aires',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Santiago',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Lima',
+        color: 'yellow'
+        },
+        {type: 'city',
+        name: 'Seoul',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Hong Kong',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Beijing',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Taipei',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Shanghai',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Tokyo',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Sydney',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Osaka',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Ho Chi Minh City',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Bangkok',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Jakarta',
+        color: 'red'
+        },
+        {type: 'city',
+        name: 'Manila',
+        color: 'red'
+        },
+    ];
+
     const cityList = [
         atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington, tehran, istanbul, riyadh, kolkata, moscow, cairo, delhi, baghdad, karachi, mumbai, chennai, algiers, lima, santiago, buenosAires, khartoum, saoPaulo, johannesburg, miami, lagos, kinshasa, mexicoCity, bogota, losAngeles, manila, jakarta, bangkok, hoChiMinhCity, osaka, sydney, tokyo, shanghai, taipei, beijing, hongKong, seoul
      ];
 
-    const infectionCardsDeck = [
+    const infectionCardsList = [
        atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington, tehran, istanbul, riyadh, kolkata, moscow, cairo, delhi, baghdad, karachi, mumbai, chennai, algiers, lima, santiago, buenosAires, khartoum, saoPaulo, johannesburg, miami, lagos, kinshasa, mexicoCity, bogota, losAngeles, manila, jakarta, bangkok, hoChiMinhCity, osaka, sydney, tokyo, shanghai, taipei, beijing, hongKong, seoul
     ];
+
+    const $infectionCards = [];
+
+    for (let i=0; i<infectionCards.length; i++){
+        const $infectionCard = $('<div>').addClass('card').addClass(infectionCards[i].color).text(infectionCards[i].name);
+        $infectionCards.push($infectionCard);
+    }
 
     const $cityCards = [];
 
@@ -331,6 +529,19 @@ $(() => {
     const $playerOneHeading = $('.playerOneHeading');
     const $playerTwoHeading = $('.playerTwoHeading');
 
+    const $playerOneConsole = $('.playerOneConsole');
+    const $playerTwoConsole = $('.playerTwoConsole');
+
+    const $drawCardsOneButton = $('<button>').attr('class', 'drawCardsButton').text('Draw Cards');
+    $playerOneConsole.append($drawCardsOneButton);
+    const $drawCardsTwoButton = $('<button>').attr('class', 'drawCardsButton').text('Draw Cards');
+    $playerTwoConsole.append($drawCardsTwoButton);
+
+    const $infectOneButton = $('<button>').attr('class', 'infectOneButton').text('Infect');
+    $playerOneConsole.append($infectOneButton);
+    const $infectTwoButton = $('<button>').attr('class', 'infectTwoButton').text('Infect');
+    $playerTwoConsole.append($infectTwoButton);
+
     const $bottomLeft = $('.bottomLeft');
     const $bottomRight = $('.bottomRight');
 
@@ -349,6 +560,8 @@ $(() => {
     $bottomLeft.append($blackCure);
     $bottomLeft.append($redCure);
 
+  
+
     const $yellowUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${yellowUnitsRemaining} Yellow Units Remain`);
     $bottomRight.append($yellowUnitsRemaining);
     const $blueUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${blueUnitsRemaining} Blue Units Remain`);
@@ -360,7 +573,7 @@ $(() => {
 
     const startGame = () => {
         shuffle($cityCards);
-        shuffle(infectionCardsDeck);
+        shuffle(infectionCards);
         for (let i=0; i<4; i++){ //deals 4 cards to player 1, removes them from player deck
             playerOneHand.push($cityCards[i]);
             $cityCards.splice(i, 1);
@@ -407,9 +620,30 @@ $(() => {
 
     }
 
-    const infectPhase = () => {
+
+
+    drawInfectionCard = () => {
+        $infectionModal = $('#infectionModal');
+        $infectionModalTextbox = $('#infectionModalTextbox');
+        $infectionModal.css('display', 'block');
+        $infectionModalTextbox.prepend($infectionCards[0]);
+        infectionCardsDiscard.push($infectionCards[0]);
+        $infectionCards.splice(0, 1);
+        $closeInfection = $('#closeInfection');
+        $closeInfection.on('click', () => {
+            $infectionModal.css('display', 'none');
+        });
+    }
+
+    const infectOnePhase = () => {
+        // for(let i=0; i<currentInfectionRate; i++){
+            $infectOneButton.on('click', drawInfectionCard);
+        // }
+    }
+
+    const infectTwoPhase = () => {
         for(let i=0; i<currentInfectionRate; i++){
-            
+            $infectTwoButton.on('click', drawInfectionCard);
         }
     }
 
@@ -418,14 +652,26 @@ $(() => {
             $($playerOneHeading).css('display', 'block');
             $($playerTwoHeading).css('display', 'none');
             //four actions
-            drawCardsPlayerOne();
-            infectPhase();
+            $drawCardsOneButton.css('color', 'white');
+            $drawCardsOneButton.on('click', drawCardsPlayerOne);
+            $drawCardsOneButton.on('click', () => {
+                $infectOneButton.css('color', 'white');
+            });
+            infectOnePhase();
+            // turnCount ++;
+            // playerTurn(); 
         } else{
             $($playerOneHeading).css('display', 'none');
             $($playerTwoHeading).css('display', 'block');
                 // four actions
-            drawCardsPlayerTwo();
-            infectPhase();
+            $drawCardsTwoButton.css('color', 'white');
+            $drawCardsTwoButton.on('click', drawCardsPlayerTwo); 
+            $drawCardsTwoButton.on('click', () => {
+                $infectTwoButton.css('color', 'white');
+            });
+            infectTwoPhase();
+            // turnCount ++;
+            // playerTurn();
         }
         
     }

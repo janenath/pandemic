@@ -46,6 +46,16 @@ h2 {
 .playerOneConsole {
     grid-row-start: 3;
     grid-row-end: 4;
+    justify-self: center;
+}
+button {
+    background-color: rgb(51,51,51);
+    font-family: 'Titillium Web', sans-serif;
+    color: rgb(51,51,51);
+    border: none;
+    width: 150px;
+    height: 30px;
+    margin: 2px auto;
 }
 .middle {
     display: grid;
@@ -222,6 +232,7 @@ h2 {
 .playerTwoConsole {
     grid-row-start: 3;
     grid-row-end: 4;
+    justify-self: center;
 }
 img {
     width: 99%;
@@ -247,4 +258,26 @@ img {
 }
 .black {
     background: rgb(51,51,51);
+}
+
+#infectionModal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#infectionModalTextbox {
+	background-color: white;
+	height: 50%;
+	width: 50%;
+    border-radius: 2px;
+    margin: auto;
+}
+#closeInfection {
+    color: white;
 }
