@@ -13,12 +13,23 @@ $(()=> {
         const $handTwo = $('.handTwo'); //creates jquery element linked to the location of player two's hand of cards
 
     //creating jquery elements linked to UI page elements, previously created with classes in index.html
+        const $cityDivsLocation = $('.cityDivsLocation');
         const $bottomLeft = $('.bottomLeft');
         const $bottomRight = $('.bottomRight');
         const $playerOneHeading = $('.playerOneHeading');
         const $playerTwoHeading = $('.playerTwoHeading');
         const $playerOneConsole = $('.playerOneConsole');
         const $playerTwoConsole = $('.playerTwoConsole');
+
+    //creating divs to give current status of each city (whether player is located there, current disease burden)  
+        const $cityDivs = [];//array to store city divs to access them for DOM manipulation  
+        for (let i=0; i<cityList.length; i++){
+            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).text(`${cityList[i].name}: ${cityList[i].diseaseUnits}`);
+            $cityDivs.push($cityDiv);
+            $cityDivsLocation.append($cityDiv);
+        }
+        console.log($cityDivs);
+
 
     //creating buttons in play consoles for gameplay
         const $drawCardsOneButton = $('<button>').attr('class', 'drawCardsButton').text('Draw Cards');
@@ -133,8 +144,8 @@ $(()=> {
             } else{
                 playerOneHand.push($cityCards[0]);
                 $cityCards.splice(0, 1);
-                playerOneHand.push($cityCards[0]);
-                $cityCards.splice(0, 1);
+                // playerOneHand.push($cityCards[0]);
+                // $cityCards.splice(0, 1);
                 $($handOne).append(playerOneHand);
             }
 
@@ -147,8 +158,8 @@ $(()=> {
             } else{
                 playerTwoHand.push($cityCards[0]);
                 $cityCards.splice(0, 1);
-                playerTwoHand.push($cityCards[0]);
-                $cityCards.splice(0, 1);
+                // playerTwoHand.push($cityCards[0]);
+                // $cityCards.splice(0, 1);
                 $($handTwo).append(playerTwoHand);
             }
 
@@ -170,13 +181,10 @@ $(()=> {
             $closeInfection.on('click', () => {
                 //remove infection cards drawn from the DOM, hide infection modal 
                 $infectionModalTextbox.empty();
-                const $closeInfection = $('<button>').attr('id', 'closeInfection');
+                const $closeInfection = $('<button>').attr('id', 'closeInfection').text('close');
                 $infectionModalTextbox.append($closeInfection);
                 $infectionModal.css('display', 'none');
                 //trigger next player's turn
-                turnCount ++;
-                console.log(turnCount);
-                playerTurn();
             });
         }
 
@@ -188,19 +196,25 @@ $(()=> {
                 //make infection button text disappear after clicking
                 $infectOneButton.on('click', () => {
                     $infectOneButton.css('color', 'rgb(51,51,51)');
+                    turnCount ++;
+                    console.log(turnCount);
+                    playerTurn();
             });
         // }
     }
         const infectTwoPhase = () => {
-            for(let i=0; i<currentInfectionRate; i++){
+            // for(let i=0; i<currentInfectionRate; i++){
                 //draw cards
                 $infectTwoButton.on('click', drawInfectionCard);
                 //make infection button text disappear after click
                 $infectTwoButton.on('click', () => {
                     $infectTwoButton.css('color', 'rgb(51,51,51)');
+                    turnCount++;
+                    console.log(turnCount);
+                    playerTurn();
             });
         }
-    }
+    
 
 //============================================
 //GAMEPLAY: PUTTING THE FUNCTIONS INTO ACTION
@@ -220,8 +234,7 @@ const playerTurn = () => {
             $infectOneButton.css('color', 'white');
         });
         infectOnePhase();
-        // turnCount ++; //increase turn count for next player's turn
-        // playerTurn(); //call function again for next player's turn
+
     } else{
         //toggle player turn headings
         $($playerOneHeading).css('display', 'none');
@@ -236,8 +249,6 @@ const playerTurn = () => {
             $infectTwoButton.css('color', 'white');
         });
         infectTwoPhase();
-        // turnCount ++;
-        // playerTurn();
     }
     
 }
@@ -245,9 +256,23 @@ const playerTurn = () => {
 //========================================
 //TIME TO START THE GAME!
 //========================================
+
+//function to find random city to start on
+const $randomCityPlayerOne = () => {
+    ($cityDivs[Math.floor(Math.random() * (49))]).prepend($playerOneIcon);
+}
+
+const $randomCityPlayerTwo = () => {
+    ($cityDivs[Math.floor(Math.random() * (49))]).prepend($playerTwoIcon);
+}
+
 const startGame = () => { //first, shuffle each deck of cards
     shuffle($cityCards);
     shuffle($infectionCards);
+    //assign each player a random starting location: append player icon to random city div on the dom
+    $randomCityPlayerOne();
+    $randomCityPlayerTwo();
+
     for (let i=0; i<4; i++){ //deals 4 cards to player 1, removes each of them from player deck
         playerOneHand.push($cityCards[i]);
         $cityCards.splice(i, 1);
