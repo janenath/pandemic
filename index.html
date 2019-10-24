@@ -17,10 +17,12 @@
 <body>
   <div class='container'>
     <div class='left'>
-      <div class='handOne'>
-        <h2>Player One</h2>
+      <div class='playerOneHeading'>
+          <h2>Player One's Turn</h2>
       </div>
-      <div class='playerOne'>
+      <div class='handOne'>
+      </div>
+      <div class='playerOneConsole'>
       </div>
     </div>
     <div class='middle'>
@@ -28,305 +30,291 @@
             <img src='img/pandemicmap.png' alt='game map'>
         </div>
         <div class='table'>
-            <style type="text/css">
-              .tg  {border-collapse:collapse;border-spacing:0;}
-              .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-              .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-              .tg .tg-3am0{background-color:#a0534d;border-color:#ffffff;text-align:center;vertical-align:top}
-              .tg .tg-k32e{background-color:#5f779e;border-color:#ffffff;text-align:left;vertical-align:top}
-              .tg .tg-0ijs{background-color:#dbbf6a;border-color:#ffffff;text-align:center;vertical-align:top}
-              .tg .tg-u79e{background-color:#efefef;color:#333333;border-color:#333333;text-align:center;vertical-align:top}
-              .tg .tg-8vqu{background-color:#dbbf6a;border-color:#ffffff;text-align:left;vertical-align:top}
-              .tg .tg-q4ff{background-color:#efefef;color:#333333;border-color:#dbbf6a;text-align:center;vertical-align:top}
-              .tg .tg-kpjc{background-color:#5f779e;border-color:#ffffff;text-align:center;vertical-align:top}
-              .tg .tg-i2lh{background-color:#333333;border-color:#ffffff;text-align:center;vertical-align:top}
-              .tg .tg-wpff{background-color:#efefef;color:#333333;border-color:#5f779e;text-align:center;vertical-align:top}
-              .tg .tg-er6f{background-color:#333333;border-color:#ffffff;text-align:left;vertical-align:top}
-              .tg .tg-by4b{background-color:#efefef;color:#333333;border-color:#a0534d;text-align:center;vertical-align:top}
-              .tg .tg-4tkq{background-color:#a0534d;border-color:#ffffff;text-align:left;vertical-align:top}
-              </style>
-              <table class="tg">
-                <tr>
-                  <th class="tg-q4ff">Los Angeles</th>
-                  <th class="tg-0ijs"></th>
-                  <th class="tg-kpjc"></th>
-                  <th class="tg-i2lh"></th>
-                  <th class="tg-3am0"></th>
-                  <th class="tg-wpff">San Francisco</th>
-                  <th class="tg-0ijs"></th>
-                  <th class="tg-kpjc"></th>
-                  <th class="tg-i2lh"></th>
-                  <th class="tg-3am0"></th>
-                  <th class="tg-u79e">Algiers</th>
-                  <th class="tg-0ijs"></th>
-                  <th class="tg-k32e"></th>
-                  <th class="tg-er6f"></th>
-                  <th class="tg-3am0"></th>
-                  <th class="tg-by4b">Beijing</th>
-                  <th class="tg-8vqu"></th>
-                  <th class="tg-kpjc"></th>
-                  <th class="tg-er6f"></th>
-                  <th class="tg-4tkq"></th>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Mexico City</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Chicago</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Cairo</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Shanghai</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Lima</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Montréal</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Istanbul</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Hong Kong</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Santiago</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Atlanta</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Moscow</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Bangkok</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Miami</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">New York</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Baghdad</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Jakarta</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Bogotá</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Washington</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Riyadh</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Seoul</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Sao Paulo</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">London</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Tehran</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Ho Chi Minh City</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Buenos Aires</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Madrid</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Karachi</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Tokyo</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Lagos</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Paris</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Mumbai</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Osaka</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Khartoum</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Essen</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Dehli</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Taipei</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Kinshasa</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">Milan</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Chennai</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Manila</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-                <tr>
-                  <td class="tg-q4ff">Johannesburg</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-wpff">St. Petersburg</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-i2lh"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-u79e">Kolkata</td>
-                  <td class="tg-0ijs"></td>
-                  <td class="tg-k32e"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-3am0"></td>
-                  <td class="tg-by4b">Sydney</td>
-                  <td class="tg-8vqu"></td>
-                  <td class="tg-kpjc"></td>
-                  <td class="tg-er6f"></td>
-                  <td class="tg-4tkq"></td>
-                </tr>
-              </table>   
+          <table class="tg">
+            <tr>
+              <th class="tg-q4ff">Los Angeles</th>
+              <th class="tg-0ijs">0</th>
+              <th class="tg-kpjc">0</th>
+              <th class="tg-i2lh">0</th>
+              <th class="tg-3am0">0</th>
+              <th class="tg-wpff">San Francisco</th>
+              <th class="tg-0ijs">0</th>
+              <th class="tg-kpjc">0</th>
+              <th class="tg-i2lh">0</th>
+              <th class="tg-3am0">0</th>
+              <th class="tg-u79e">Algiers</th>
+              <th class="tg-0ijs">0</th>
+              <th class="tg-k32e">0</th>
+              <th class="tg-er6f">0</th>
+              <th class="tg-3am0">0</th>
+              <th class="tg-by4b">Beijing</th>
+              <th class="tg-8vqu">0</th>
+              <th class="tg-kpjc">0</th>
+              <th class="tg-er6f">0</th>
+              <th class="tg-4tkq">0</th>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Mexico City</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Chicago</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Cairo</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Shanghai</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Lima</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Montréal</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Istanbul</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Hong Kong</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Santiago</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Atlanta</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Moscow</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Bangkok</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Miami</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">New York</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Baghdad</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Jakarta</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Bogotá</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Washington</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Riyadh</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Seoul</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Sao Paulo</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">London</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Tehran</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Ho Chi Minh City</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Buenos Aires</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Madrid</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Karachi</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Tokyo</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Lagos</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Paris</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Mumbai</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Osaka</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Khartoum</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Essen</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Dehli</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Taipei</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Kinshasa</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">Milan</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Chennai</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Manila</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+            <tr>
+              <td class="tg-q4ff">Johannesburg</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-wpff">St. Petersburg</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-i2lh">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-u79e">Kolkata</td>
+              <td class="tg-0ijs">0</td>
+              <td class="tg-k32e">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-3am0">0</td>
+              <td class="tg-by4b">Sydney</td>
+              <td class="tg-8vqu">0</td>
+              <td class="tg-kpjc">0</td>
+              <td class="tg-er6f">0</td>
+              <td class="tg-4tkq">0</td>
+            </tr>
+          </table>   
         </div>
         <div class='bottom'>
           <div class='bottomLeft'>
           </div>
           <div class='bottomMiddle'>
               <h1>PANDEMIC</h1>
+              <button class='instructionsButton'>Instructions</button>
           </div>
           <div class='bottomRight'>
           </div>
         </div>
     </div>
     <div class='right'>
-        <div class='handTwo'>
-            <h2>Player Two</h2>
+        <div class='playerTwoHeading'>
+            <h2>Player Two's Turn</h2>
         </div>
-        <div class='playerTwo'>
+        <div class='handTwo'>
+        </div>
+        <div class='playerTwoConsole'>
         </div>
     </div>
   </div>

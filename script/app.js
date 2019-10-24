@@ -21,6 +21,10 @@ $(() => {
     let blackUnitsRemaining = 24;
     let yellowUnitsRemaining = 24;
     let redUnitsRemaining = 24;
+    let blueCure = false;
+    let blackCure = false;
+    let yellowCure = false;
+    let redCure = false;
     
     const atlanta = {name: 'Atlanta', class: 'atlanta', color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: true, moveOptions: ['chicago', 'washington', 'miami']};
     const essen = {name: 'Essen', class: 'essen', color: 'blue', blueUnits: 0, blackUnits: 0, yellowUnits: 0, redUnits: 0, researchStation: false, moveOptions: ['london', 'milan', 'paris', 'stPetersburg']};
@@ -73,191 +77,191 @@ $(() => {
 
     const playerCards = [
         {type: 'city',
-        name: 'essen',
+        name: 'Essen',
         color: 'blue'
         },
         {type: 'city',
-        name: 'paris',
+        name: 'Paris',
         color: 'blue'
         },
         {type: 'city',
-        name: 'sanFrancisco',
+        name: 'San Francisco',
         color: 'blue'
         },
         {type: 'city',
-        name: 'stPetersburg',
+        name: 'St. Petersburg',
         color: 'blue'
         },
         {type: 'city',
-        name: 'milan',
+        name: 'Milan',
         color: 'blue'
         },
         {type: 'city',
-        name: 'madrid',
+        name: 'Madrid',
         color: 'blue'
         },
         {type: 'city',
-        name: 'london',
+        name: 'London',
         color: 'blue'
         },
         {type: 'city',
-        name: 'montreal',
+        name: 'Montréal',
         color: 'blue'
         },   
         {type: 'city',
-        name: 'newYork',
+        name: 'New York',
         color: 'blue'
         },
         {type: 'city',
-        name: 'chicago',
+        name: 'Chicago',
         color: 'blue'
         },  
         {type: 'city',
-        name: 'washington',
+        name: 'Washington',
         color: 'blue'
         }, 
         {type: 'city',
-        name: 'algiers',
+        name: 'Algiers',
         color: 'black'
         },
         {type: 'city',
-        name: 'chennai',
+        name: 'Chennai',
         color: 'black'
         },        
         {type: 'city',
-        name: 'mumbai',
+        name: 'Mumbai',
         color: 'black'
         },
         {type: 'city',
-        name: 'karachi',
+        name: 'Karachi',
         color: 'black'
         },
         {type: 'city',
-        name: 'baghdad',
+        name: 'Baghdad',
         color: 'black'
         },
         {type: 'city',
-        name: 'delhi',
+        name: 'Delhi',
         color: 'black'
         },
         {type: 'city',
-        name: 'cairo',
+        name: 'Cairo',
         color: 'black'
         },
         {type: 'city',
-        name: 'moscow',
+        name: 'Moscow',
         color: 'black'
         },
         {type: 'city',
-        name: 'kolkata',
+        name: 'Kolkata',
         color: 'black'
         },
         {type: 'city',
-        name: 'riyadh',
+        name: 'Riyadh',
         color: 'black'
         },
         {type: 'city',
-        name: 'istanbul',
+        name: 'Istanbul',
         color: 'black'
         },
         {type: 'city',
-        name: 'tehran',
+        name: 'Tehran',
         color: 'black'
         },
         {type: 'city',
-        name: 'losAngeles',
+        name: 'Los Angeles',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'bogota',
+        name: 'Bogotá',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'mexicoCity',
+        name: 'Mexico City',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'kinshasa',
+        name: 'Kinshasa',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'lagos',
+        name: 'Lagos',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'miami',
+        name: 'Miami',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'johannesburg',
+        name: 'Johannesburg',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'saoPaulo',
+        name: 'Sao Paulo',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'khartoum',
+        name: 'Khartoum',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'buenosAires',
+        name: 'Buenos Aires',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'santiago',
+        name: 'Santiago',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'lima',
+        name: 'Lima',
         color: 'yellow'
         },
         {type: 'city',
-        name: 'seoul',
+        name: 'Seoul',
         color: 'red'
         },
         {type: 'city',
-        name: 'hongKong',
+        name: 'Hong Kong',
         color: 'red'
         },
         {type: 'city',
-        name: 'beijing',
+        name: 'Beijing',
         color: 'red'
         },
         {type: 'city',
-        name: 'taipei',
+        name: 'Taipei',
         color: 'red'
         },
         {type: 'city',
-        name: 'shanghai',
+        name: 'Shanghai',
         color: 'red'
         },
         {type: 'city',
-        name: 'tokyo',
+        name: 'Tokyo',
         color: 'red'
         },
         {type: 'city',
-        name: 'sydney',
+        name: 'Sydney',
         color: 'red'
         },
         {type: 'city',
-        name: 'osaka',
+        name: 'Osaka',
         color: 'red'
         },
         {type: 'city',
-        name: 'hoChiMinhCity',
+        name: 'Ho Chi Minh City',
         color: 'red'
         },
         {type: 'city',
-        name: 'bangkok',
+        name: 'Bangkok',
         color: 'red'
         },
         {type: 'city',
-        name: 'jakarta',
+        name: 'Jakarta',
         color: 'red'
         },
         {type: 'city',
-        name: 'manila',
+        name: 'Manila',
         color: 'red'
         },
     ];
@@ -324,6 +328,36 @@ $(() => {
     const $handOne = $('.handOne');
     const $handTwo = $('.handTwo');
 
+    const $playerOneHeading = $('.playerOneHeading');
+    const $playerTwoHeading = $('.playerTwoHeading');
+
+    const $bottomLeft = $('.bottomLeft');
+    const $bottomRight = $('.bottomRight');
+
+    const $infectionRate = $('<div>').addClass('infectionRate').text(`Current Infection Rate: ${currentInfectionRate}`);
+    $bottomLeft.append($infectionRate);
+
+    const $outbreakNumber = $('<div>').addClass('outbreakNumber').text(`Number of Outbreaks: ${outbreakCount}/8`);
+    $bottomLeft.append($outbreakNumber);
+
+    const $yellowCure = $('<div>').addClass('yellowCure').text('Yellow Not Cured');
+    const $blueCure = $('<div>').addClass('blueCure').text('Blue Not Cured');
+    const $blackCure = $('<div>').addClass('blackCure').text('Black Not Cured');
+    const $redCure = $('<div>').addClass('redCure').text('Red Not Cured');
+    $bottomLeft.append($yellowCure);
+    $bottomLeft.append($blueCure);
+    $bottomLeft.append($blackCure);
+    $bottomLeft.append($redCure);
+
+    const $yellowUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${yellowUnitsRemaining} Yellow Units Remain`);
+    $bottomRight.append($yellowUnitsRemaining);
+    const $blueUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${blueUnitsRemaining} Blue Units Remain`);
+    $bottomRight.append($blueUnitsRemaining);
+    const $blackUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${blackUnitsRemaining} Black Units Remain`);
+    $bottomRight.append($blackUnitsRemaining);
+    const $redUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${redUnitsRemaining} Red Units Remain`);
+    $bottomRight.append($redUnitsRemaining);
+
     const startGame = () => {
         shuffle($cityCards);
         shuffle(infectionCardsDeck);
@@ -339,24 +373,36 @@ $(() => {
             $cityCards.push(epidemic)
         }
         shuffle($cityCards);
-        console.log(playerOneHand);
-        console.log(playerTwoHand);
         $($handOne).append(playerOneHand);
         $($handTwo).append(playerTwoHand);
-
-        // playerTurn()
+        playerTurn();
     }
 
-    const drawCards = (player) => {
+    const drawCardsPlayerOne = () => {
         if(playerCards[0].type === 'epidemic'){
             console.log('epidemic!');
             epidemic.epidemic();
             
         } else{
-            player.push(playerCards[0]);
-            playerCards.shift();
-            player.push(playerCards[0]);
-            playerCards.shift();
+            playerOneHand.push($cityCards[0]);
+            $cityCards.splice(0, 1);
+            playerOneHand.push($cityCards[0]);
+            $cityCards.splice(0, 1);
+            $($handOne).append(playerOneHand);
+        }
+
+    }
+    const drawCardsPlayerTwo = () => {
+        if(playerCards[0].type === 'epidemic'){
+            console.log('epidemic!');
+            epidemic.epidemic();
+            
+        } else{
+            playerTwoHand.push($cityCards[0]);
+            $cityCards.splice(0, 1);
+            playerTwoHand.push($cityCards[0]);
+            $cityCards.splice(0, 1);
+            $($handTwo).append(playerTwoHand);
         }
 
     }
@@ -367,18 +413,22 @@ $(() => {
         }
     }
 
-    // const playerTurn = () => {
-    //     if (turnCount%2 === 0){
-    //         //four actions
-    //         drawCards(playerOneHand);
-    //         infectPhase();
-    //     } else{
-                //four actions
-    //         drawCards(playerTwoHand);
-    //         infectPhase();
-    //     }
+    const playerTurn = () => {
+        if (turnCount%2 === 0){
+            $($playerOneHeading).css('display', 'block');
+            $($playerTwoHeading).css('display', 'none');
+            //four actions
+            drawCardsPlayerOne();
+            infectPhase();
+        } else{
+            $($playerOneHeading).css('display', 'none');
+            $($playerTwoHeading).css('display', 'block');
+                // four actions
+            drawCardsPlayerTwo();
+            infectPhase();
+        }
         
-    // }
+    }
 
     startGame();
 });

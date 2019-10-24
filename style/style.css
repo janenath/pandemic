@@ -1,21 +1,24 @@
 html, body {
     margin: 0;
-    height: 100%;
-    width: 100%;
     font-family: arial;
     font-size: 20px;
+    border: 2px rgb(51,51,51) solid;
 }
 h1 {
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
     margin: 0;
-    font-size: 4vw;
+    font-size: 4.2vw;
 }
 h2 {
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 0;
-    font-size: 3vw;
+    background: rgb(51,51,51);
+    color: white;
+    font-size: 2.5vw;
 }
 .container {
     display: grid;
@@ -27,43 +30,80 @@ h2 {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 10% 70% 20%;
     justify-self: center;
-    border: 5px rgb(51,51,51) solid;
-    width: 99%;
+    /* border: 5px rgb(51,51,51) solid; */
+    width: 100%;
 }
-.handOne {
+.playerOneHeading {
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.playerOne {
+.handOne {
     grid-row-start: 2;
     grid-row-end: 3;
+}
+.playerOneConsole {
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 .middle {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-template-rows: 30% 1fr 40%;
-    justify-self: center;
-    border: 5px rgb(51,51,51) solid;
-    padding: 10px;
-    width: 96%;
+    grid-template-rows: 45% 30% 15%;
+    border-left: 5px rgb(51,51,51) solid;
+    border-right: 5px rgb(51,51,51) solid;
 }
 .map {
     grid-row-start: 1;
     grid-row-end: 2;
 }
 .table {
-    border: 5px rgb(51,51,51) solid;
+    display: grid;
     grid-row-start: 2;
     grid-row-end: 3;
-    justify-self: center;
-}
-table {
     width: 100%;
-    height: auto;
 }
+.tg {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+.tg td {
+    font-family:Arial, sans-serif;
+    font-size:8px;
+    padding: 1px;
+    border-style:solid;
+    border-width:1.5px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:black;
+    color: white;
+}
+.tg th {
+    font-family:Arial, sans-serif;
+    font-size:8px;
+    padding: 1px;
+    font-weight: normal;
+    border-style:solid;
+    border-width:1.5px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:black;
+    color: white;
+}
+.tg .tg-3am0{background-color:#a0534d;text-align:center;vertical-align:top}
+.tg .tg-k32e{background-color:#5f779e;text-align:left;vertical-align:top}
+.tg .tg-0ijs{background-color:#dbbf6a;text-align:center;vertical-align:top}
+.tg .tg-u79e{background-color:#efefef;color:#333333;border-color:#333333;text-align:center;vertical-align:top}
+.tg .tg-8vqu{background-color:#dbbf6a;text-align:left;vertical-align:top}
+.tg .tg-q4ff{background-color:#efefef;color:#333333;border-color:#dbbf6a;text-align:center;vertical-align:top}
+.tg .tg-kpjc{background-color:#5f779e;text-align:center;vertical-align:top}
+.tg .tg-i2lh{background-color:#333333;text-align:center;vertical-align:top}
+.tg .tg-wpff{background-color:#efefef;color:#333333;border-color:#5f779e;text-align:center;vertical-align:top}
+.tg .tg-er6f{background-color:#333333;text-align:left;vertical-align:top}
+.tg .tg-by4b{background-color:#efefef;color:#333333;border-color:#a0534d;text-align:center;vertical-align:top}
+.tg .tg-4tkq{background-color:#a0534d;text-align:left;vertical-align:top}
 .bottom {
     display: grid;
     grid-row-start: 3;
@@ -73,44 +113,128 @@ table {
 .bottomLeft {
     grid-column-start: 1;
     grid-column-end: 2;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
 }
+.infectionRate {
+    font-size: 10px;
+    text-align: center;
+    border: 2px rgb(51,51,51) solid;
+    width: 120px;
+    padding: 2px;
+    margin-top: 4px;
+}
+.outbreakNumber {
+    font-size: 10px;
+    text-align: center;
+    border: 2px rgb(51,51,51) solid;
+    width: 120px;
+    padding: 2px;
+}
+
+.yellowCure {
+    background-color: rgb(219,191,106);
+    border: 2px rgb(51,51,51) solid;
+    color: white;
+    width: 120px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+.blueCure {
+    background-color: rgb(95,119,158);
+    border: 2px rgb(51,51,51) solid;
+    color: white;
+    width: 120px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+.blackCure {
+    background-color: rgb(51,51,51);
+    border: 2px rgb(51,51,51) solid;
+    color: white;
+    width: 120px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+.redCure {
+    background-color: rgb(160,83,77);
+    border: 2px rgb(51,51,51) solid;
+    color: white;
+    width: 120px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+}
+
+
 .bottomMiddle {
     grid-column-start: 2;
     grid-column-end: 3;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+.instructionsButton {
+    background-color: rgb(51,51,51);
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+.instructionsButton:hover {
+    transform: scale(1.2);
 }
 .bottomRight {
     grid-column-start: 3;
     grid-column-end: 4;
+    justify-self: center;
+    align-self: center;
+}
+.unitsRemaining {
+    font-size: 10px;
+    text-align: center;
+    border: 2px rgb(51,51,51) solid;
+    width: 120px;
+    padding: 3px;
 }
 .right {
     display: grid;
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 10% 70% 20%;
     justify-self: center;
-    border: 5px rgb(51,51,51) solid;
-    width: 99%;
+    width: 100%;
 }
-.handTwo {
+.playerTwoHeading {
     grid-row-start: 1;
     grid-row-end: 2;
+    width: 156px;
 }
-.playerTwo {
+.handTwo {
     grid-row-start: 2;
     grid-row-end: 3;
 }
+.playerTwoConsole {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
 img {
-    width: 100%;
+    width: 99%;
     height: auto;
+    margin: 0 auto;
 }
 .card {
-    width: 50%;
-    height: 20%;
     color: white;
     text-align: center;
-    vertical-align: middle;
-    font-size: 12px;
-    border: 5px white solid;
+    padding: 5% 0;
+    font-size: 16px;
+    font-weight: bold;
+    /* border: 5px rgb(51,51,51) solid; */
 }
 .red {
     background: rgb(160,83,77);
