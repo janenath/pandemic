@@ -3,7 +3,6 @@
 //============================================
 
 $(()=> {
-
 //========================================
 //APPENDING GAMEPLAY ELEMENTS TO DOM
 //========================================
@@ -61,7 +60,6 @@ $(()=> {
 //================================
 //CITY CARDS DECK
 //================================
-
     //CREATE DECK OF CITY CARDS (empty array)
         const $cityCards = [];
 
@@ -73,7 +71,6 @@ $(()=> {
 //========================================
 //INFECTION CARDS DECK
 //========================================
-
     //CREATE DECK OF INFECTION CARDS (empty array)
         const $infectionCards = [];
 
@@ -89,7 +86,6 @@ $(()=> {
 //========================================
 //GAMEPLAY GENERAL FUNCTIONS
 //========================================
-
     //CHECK FOR OUTBREAKS
         const checkForOutbreak = (city) => {
 
@@ -174,22 +170,26 @@ $(()=> {
             $closeInfection.on('click', () => {
                 //remove infection cards drawn from the DOM, hide infection modal 
                 $infectionModalTextbox.empty();
+                const $closeInfection = $('<button>').attr('id', 'closeInfection');
+                $infectionModalTextbox.append($closeInfection);
                 $infectionModal.css('display', 'none');
+                //trigger next player's turn
+                turnCount ++;
+                console.log(turnCount);
+                playerTurn();
             });
         }
 
     //INFECT
         const infectOnePhase = () => {
-            for(let i=0; i<currentInfectionRate; i++){
+            // for(let i=0; i<currentInfectionRate; i++){
                 //draw cards
                 $infectOneButton.on('click', drawInfectionCard);
                 //make infection button text disappear after clicking
                 $infectOneButton.on('click', () => {
                     $infectOneButton.css('color', 'rgb(51,51,51)');
             });
-            turnCount ++;
-            playerTurn();
-        }
+        // }
     }
         const infectTwoPhase = () => {
             for(let i=0; i<currentInfectionRate; i++){
@@ -199,7 +199,6 @@ $(()=> {
                 $infectTwoButton.on('click', () => {
                     $infectTwoButton.css('color', 'rgb(51,51,51)');
             });
-            
         }
     }
 
@@ -221,8 +220,8 @@ const playerTurn = () => {
             $infectOneButton.css('color', 'white');
         });
         infectOnePhase();
-        turnCount ++; //increase turn count for next player's turn
-        playerTurn(); //call function again for next player's turn
+        // turnCount ++; //increase turn count for next player's turn
+        // playerTurn(); //call function again for next player's turn
     } else{
         //toggle player turn headings
         $($playerOneHeading).css('display', 'none');
@@ -258,7 +257,7 @@ const startGame = () => { //first, shuffle each deck of cards
         $cityCards.splice(i, 1);
     }
     for (let i=0; i<4; i++){ //adds 4 epidemic event cards to player deck to intensify gameplay (this is done after dealing player cards)
-        $cityCards.push(epidemic)
+        $cityCards.push(epidemic);
     }
     shuffle($cityCards); //reshuffle the deck now that the epidemic cards have been added
     $($handOne).append(playerOneHand); //appends player hands to the DOM
