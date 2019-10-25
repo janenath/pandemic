@@ -32,7 +32,6 @@ h2 {
     grid-column-end: 2;
     grid-template-rows: 10% 70% 20%;
     justify-self: center;
-    /* border: 5px rgb(51,51,51) solid; */
     width: 100%;
 }
 .playerOneHeading {
@@ -53,7 +52,7 @@ button {
     font-family: 'Titillium Web', sans-serif;
     color: rgb(51,51,51);
     border: none;
-    width: 150px;
+    width: 155px;
     height: 30px;
     margin: 2px auto;
 }
@@ -61,7 +60,7 @@ button {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-template-rows: 45% 30% 15%;
+    grid-template-rows: 38% 40% 22%;
     border-left: 5px rgb(51,51,51) solid;
     border-right: 5px rgb(51,51,51) solid;
 }
@@ -69,51 +68,25 @@ button {
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.table {
-    display: grid;
+.middleCenter {
     grid-row-start: 2;
     grid-row-end: 3;
-    width: 100%;
 }
-.tg {
-    border-collapse:collapse;
-    border-spacing:0;
+.cityDivsLocation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: repeat (4, 1fr); */
 }
-.tg td {
-    font-family:Arial, sans-serif;
-    font-size:8px;
-    padding: 1px;
-    border-style:solid;
-    border-width:1.5px;
-    overflow:hidden;
-    word-break:normal;
-    border-color:black;
+.cityDiv {
+    width: 130px;
+    height: 12px;
     color: white;
-}
-.tg th {
-    font-family:Arial, sans-serif;
-    font-size:8px;
+    font-size: 10px;
     padding: 1px;
-    font-weight: normal;
-    border-style:solid;
-    border-width:1.5px;
-    overflow:hidden;
-    word-break:normal;
-    border-color:black;
-    color: white;
+    text-align: center;
 }
-.tg .tg-3am0{background-color:#a0534d;text-align:center;vertical-align:top}
-.tg .tg-k32e{background-color:#5f779e;text-align:left;vertical-align:top}
-.tg .tg-0ijs{background-color:#dbbf6a;text-align:center;vertical-align:top}
-.tg .tg-u79e{background-color:#efefef;color:#333333;border-color:#333333;text-align:center;vertical-align:top}
-.tg .tg-8vqu{background-color:#dbbf6a;text-align:left;vertical-align:top}
-.tg .tg-q4ff{background-color:#efefef;color:#333333;border-color:#dbbf6a;text-align:center;vertical-align:top}
-.tg .tg-kpjc{background-color:#5f779e;text-align:center;vertical-align:top}
-.tg .tg-i2lh{background-color:#333333;text-align:center;vertical-align:top}
-.tg .tg-wpff{background-color:#efefef;color:#333333;border-color:#5f779e;text-align:center;vertical-align:top}
-.tg .tg-er6f{background-color:#333333;text-align:left;vertical-align:top}
-.tg .tg-by4b{background-color:#efefef;color:#333333;border-color:#a0534d;text-align:center;vertical-align:top}
-.tg .tg-4tkq{background-color:#a0534d;text-align:left;vertical-align:top}
+
 .bottom {
     display: grid;
     grid-row-start: 3;
@@ -179,8 +152,6 @@ button {
     font-size: 10px;
     padding: 2px;
 }
-
-
 .bottomMiddle {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -273,10 +244,12 @@ img {
 }
 #infectionModalTextbox {
 	background-color: white;
-	height: 50%;
+	height: 30%;
 	width: 50%;
     border-radius: 2px;
+    line-height: 20px;
     margin: auto;
+    text-align: center;
 }
 #closeInfection {
     color: white;

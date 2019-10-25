@@ -7,16 +7,20 @@
     <title>Pandemic</title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600&display=swap" rel="stylesheet">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://kit.fontawesome.com/180879cb6a.js" crossorigin="anonymous"></script>
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script src="script/app.js"></script>
+  <script src="script/data.js"></script>
+  <script src='script/UI.js'></script>
 </head>
 <body>
   <div id='infectionModal'>
     <div id='infectionModalTextbox'>
+        <p>has been infected!</p>
+      <br>
       <button id='closeInfection'>Close</button>
     </div>
   </div>
@@ -29,279 +33,16 @@
       <div class='handOne'>
       </div>
       <div class='playerOneConsole'>
+          <i class="fas fa-user-nurse fa-2x"></i>
       </div>
     </div>
     <div class='middle'>
         <div class='map'>
             <img src='img/pandemicmap.png' alt='game map'>
         </div>
-        <div class='table'>
-          <table class="tg">
-            <tr>
-              <th class="tg-q4ff city">Los Angeles</th>
-              <th class="tg-0ijs">0</th>
-              <th class="tg-kpjc">0</th>
-              <th class="tg-i2lh">0</th>
-              <th class="tg-3am0">0</th>
-              <th class="tg-wpff city">San Francisco</th>
-              <th class="tg-0ijs">0</th>
-              <th class="tg-kpjc">0</th>
-              <th class="tg-i2lh">0</th>
-              <th class="tg-3am0">0</th>
-              <th class="tg-u79e city">Algiers</th>
-              <th class="tg-0ijs">0</th>
-              <th class="tg-k32e">0</th>
-              <th class="tg-er6f">0</th>
-              <th class="tg-3am0">0</th>
-              <th class="tg-by4b city">Beijing</th>
-              <th class="tg-8vqu">0</th>
-              <th class="tg-kpjc">0</th>
-              <th class="tg-er6f">0</th>
-              <th class="tg-4tkq">0</th>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Mexico City</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Chicago</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Cairo</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Shanghai</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Lima</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Montréal</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Istanbul</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Hong Kong</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Santiago</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Atlanta</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Moscow</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Bangkok</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Miami</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">New York</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Baghdad</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Jakarta</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Bogotá</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Washington</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Riyadh</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Seoul</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Sao Paulo</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">London</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Tehran</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Ho Chi Minh City</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Buenos Aires</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Madrid</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Karachi</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Tokyo</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Lagos</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Paris</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Mumbai</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Osaka</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Khartoum</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Essen</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Dehli</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Taipei</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Kinshasa</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">Milan</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Chennai</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Manila</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-            <tr>
-              <td class="tg-q4ff city">Johannesburg</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-wpff city">St. Petersburg</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-i2lh">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-u79e city">Kolkata</td>
-              <td class="tg-0ijs">0</td>
-              <td class="tg-k32e">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-3am0">0</td>
-              <td class="tg-by4b city">Sydney</td>
-              <td class="tg-8vqu">0</td>
-              <td class="tg-kpjc">0</td>
-              <td class="tg-er6f">0</td>
-              <td class="tg-4tkq">0</td>
-            </tr>
-          </table>   
+        <div class='middleCenter'>
+          <div class='cityDivsLocation'>
+          </div>
         </div>
         <div class='bottom'>
           <div class='bottomLeft'>
@@ -321,6 +62,7 @@
         <div class='handTwo'>
         </div>
         <div class='playerTwoConsole'>
+            <i class="fas fa-user-md fa-2x"></i>
         </div>
     </div>
   </div>
