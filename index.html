@@ -8,6 +8,44 @@
     <title>Pandemic</title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages: ['geochart']});
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       'mapsApiKey': 'AIzaSyCJmZYm1OpymYPVr2eaXYTc4Jm6uvGHcgs'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Population', 'Area'],
+        ['Rome',      2761477,    1285.31],
+        ['Milan',     1324110,    181.76],
+        ['Naples',    959574,     117.27],
+        ['Turin',     907563,     130.17],
+        ['Palermo',   655875,     158.9],
+        ['Genoa',     607906,     243.60],
+        ['Bologna',   380181,     140.7],
+        ['Florence',  371282,     102.41],
+        ['Fiumicino', 67370,      213.44],
+        ['Anzio',     52192,      43.43],
+        ['Ciampino',  38262,      11]
+      ]);
+
+      var options = {
+        region: 'world',
+        displayMode: 'markers',
+        colorAxis: {colors: ['green', 'blue']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
     <script src="https://kit.fontawesome.com/180879cb6a.js" crossorigin="anonymous"></script>
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -40,7 +78,7 @@
     </div>
     <div class='middle'>
         <div class='map'>
-            <img src='img/pandemicmap.png' alt='game map'>
+            <div id="chart_div" style="width: 900px; height: 500px;"></div>
         </div>
         <div class='middleCenter'>
           <div class='cityDivsLocation'>
