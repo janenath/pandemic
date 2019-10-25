@@ -312,4 +312,5 @@ const startGame = () => { //first, shuffle each deck of cards
     playerTurn(); //initiate first player turn
 }
 startGame(); //starts game on page load
+
 });
