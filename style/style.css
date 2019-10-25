@@ -1,14 +1,16 @@
 html, body {
     margin: 0;
     font-family: arial;
-    font-size: 20px;
+    font-size: 30px;
     border: 2px rgb(51,51,51) solid;
 }
 h1 {
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
-    margin: 0;
-    font-size: 4.2vw;
+    margin: 0 0 0 25px;
+    padding: 10px;
+    font-size: 6vw;
+    font-weight: bold;
 }
 h2 {
     font-family: 'Titillium Web', sans-serif;
@@ -52,7 +54,7 @@ button {
     font-family: 'Titillium Web', sans-serif;
     color: rgb(51,51,51);
     border: none;
-    width: 155px;
+    width: 100%;
     height: 30px;
     margin: 2px auto;
 }
@@ -60,7 +62,7 @@ button {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-template-rows: 38% 40% 22%;
+    grid-template-rows: 200px 252px 1fr;
     border-left: 5px rgb(51,51,51) solid;
     border-right: 5px rgb(51,51,51) solid;
 }
@@ -76,14 +78,14 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* grid-template-columns: repeat (4, 1fr); */
+    padding: 5px;
 }
 .cityDiv {
     width: 130px;
-    height: 12px;
+    height: auto;
     color: white;
-    font-size: 10px;
-    padding: 1px;
+    font-size: 14px;
+    padding: 3px;
     text-align: center;
 }
 
@@ -91,7 +93,7 @@ button {
     display: grid;
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 .bottomLeft {
     grid-column-start: 1;
@@ -100,22 +102,6 @@ button {
     align-self: center;
     text-align: center;
 }
-.infectionRate {
-    font-size: 10px;
-    text-align: center;
-    border: 2px rgb(51,51,51) solid;
-    width: 120px;
-    padding: 2px;
-    margin-top: 4px;
-}
-.outbreakNumber {
-    font-size: 10px;
-    text-align: center;
-    border: 2px rgb(51,51,51) solid;
-    width: 120px;
-    padding: 2px;
-}
-
 .yellowCure {
     background-color: rgb(219,191,106);
     border: 2px rgb(51,51,51) solid;
@@ -152,7 +138,7 @@ button {
     font-size: 10px;
     padding: 2px;
 }
-.bottomMiddle {
+.bottomRight {
     grid-column-start: 2;
     grid-column-end: 3;
     text-align: center;
@@ -170,19 +156,7 @@ button {
 .instructionsButton:hover {
     transform: scale(1.2);
 }
-.bottomRight {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    justify-self: center;
-    align-self: center;
-}
-.unitsRemaining {
-    font-size: 10px;
-    text-align: center;
-    border: 2px rgb(51,51,51) solid;
-    width: 120px;
-    padding: 3px;
-}
+
 .right {
     display: grid;
     grid-column-start: 3;

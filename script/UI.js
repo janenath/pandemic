@@ -24,7 +24,7 @@ $(()=> {
     //creating divs to give current status of each city (whether player is located there, current disease burden)  
         const $cityDivs = [];//array to store city divs to access them for DOM manipulation  
         for (let i=0; i<cityList.length; i++){
-            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).attr('id', `${cityList[i].name}`).text(`${cityList[i].name}: ${cityList[i].diseaseUnits}`);
+            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).attr('id', `${cityList[i].name}`).text(`${cityList[i].name}`);
             $cityDivs.push($cityDiv);
             $cityDivsLocation.append($cityDiv);
         }
@@ -40,33 +40,7 @@ $(()=> {
         const $infectTwoButton = $('<button>').attr('class', 'infectTwoButton').text('Infect');
         $playerOneConsole.append($infectOneButton);
         $playerTwoConsole.append($infectTwoButton);
-
-    //appending current gameplay data to DOM
-        const $infectionRate = $('<div>').addClass('infectionRate').text(`Current Infection Rate: ${currentInfectionRate}`);
-        const $outbreakNumber = $('<div>').addClass('outbreakNumber').text(`Number of Outbreaks: ${outbreakCount}/8`);
-        $bottomLeft.append($infectionRate);
-        $bottomLeft.append($outbreakNumber);
-
-    //cure statuses
-        const $yellowCure = $('<div>').addClass('yellowCure').text('Yellow Not Cured');
-        const $blueCure = $('<div>').addClass('blueCure').text('Blue Not Cured');
-        const $blackCure = $('<div>').addClass('blackCure').text('Black Not Cured');
-        const $redCure = $('<div>').addClass('redCure').text('Red Not Cured');
-        $bottomLeft.append($yellowCure);
-        $bottomLeft.append($blueCure);
-        $bottomLeft.append($blackCure);
-        $bottomLeft.append($redCure);
-
-    //disease units remaining
-        const $yellowUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${yellowUnitsRemaining} Yellow Units Remain`);   
-        const $blueUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${blueUnitsRemaining} Blue Units Remain`);
-        const $blackUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${blackUnitsRemaining} Black Units Remain`);
-        const $redUnitsRemaining = $('<div>').addClass('unitsRemaining').text(`${redUnitsRemaining} Red Units Remain`);
-        $bottomRight.append($yellowUnitsRemaining);
-        $bottomRight.append($blueUnitsRemaining);
-        $bottomRight.append($blackUnitsRemaining);
-        $bottomRight.append($redUnitsRemaining);
-
+ 
 //================================
 //CITY CARDS DECK
 //================================
@@ -96,26 +70,6 @@ $(()=> {
 //========================================
 //GAMEPLAY GENERAL FUNCTIONS
 //========================================
-    //CHECK FOR OUTBREAKS
-        const checkForOutbreak = (city) => {
-
-        }
-
-    //OUTBREAK
-        const outbreak = (country) => {
-            outbreakCount ++;
-            if (outbreakCount >= 8) {
-                alert('the world has lost! too many outbreaks!')
-            } else {
-                for(let i=0; i<country.moveOptions.length; i++){
-                    const outbreakCountry = country.moveOptions[i].valueOf(); //use function?
-                    const outbreakDiseaseTargeted = `${country.color.valueOf()}+Units`;
-                    const outbreakEffect = outbreakCountry.outbreakDiseaseTargeted;
-                    outbreakEffect ++;
-                }
-            }
-        }
-
 
     //EPIDEMIC
         const epidemic = {
@@ -166,9 +120,6 @@ $(()=> {
 
     //DRAW INFECTION CARDS
 
-    // const infect = ($currentInfectionCard) => {
-    //     console.log($currentInfectionCard);
-    // }
         const drawInfectionCard = () => {
             //create jquery variable to access infection modal
             $infectionModal = $('#infectionModal');
@@ -178,20 +129,17 @@ $(()=> {
             //access the city text of the top infection card
             const $currentInfectionCard = ($infectionCards[0]);
             const $infectedCity = $($currentInfectionCard).text();
-            console.log($infectedCity);
             //find which city in the cityDivs matches the infectedCity, increase its number of disease units
             $infectionModalTextbox.prepend($currentInfectionCard);
             // console.log($cityDivs.indexOf($infectedCity.val));
             for(let i=0; i<$cityDivs.length; i++) {
                 const $eachCityName = $cityDivs[i].attr('id');
                 if ($eachCityName === $infectedCity) {
-                    // const $thisCity = $($eachCityName).parent();
-                    $($cityDivs[i]).text('infected');
+                    $($cityDivs[i]).text('');
+                    $($cityDivs[i]).append('<i>').addClass('fas fa-biohazard');
                 } 
         }
             
-
-
             //remove current infection cards from deck, put it in discard
             $infectionCardsDiscard.push($infectionCards[0]);
             $infectionCards.splice(0, 1);
@@ -208,9 +156,6 @@ $(()=> {
                 //trigger next player's turn
             });
         }
-
-
-
 
         const infectOnePhase = () => {
             // for(let i=0; i<currentInfectionRate; i++){
@@ -279,21 +224,10 @@ const playerTurn = () => {
 //TIME TO START THE GAME!
 //========================================
 
-//function to find random city to start on
-const $randomCityPlayerOne = () => {
-    ($cityDivs[Math.floor(Math.random() * (49))]).prepend($playerOneIcon);
-}
-
-const $randomCityPlayerTwo = () => {
-    ($cityDivs[Math.floor(Math.random() * (49))]).prepend($playerTwoIcon);
-}
-
 const startGame = () => { //first, shuffle each deck of cards
     shuffle($cityCards);
     shuffle($infectionCards);
-    //assign each player a random starting location: append player icon to random city div on the dom
-    $randomCityPlayerOne();
-    $randomCityPlayerTwo();
+
 
     for (let i=0; i<4; i++){ //deals 4 cards to player 1, removes each of them from player deck
         playerOneHand.push($cityCards[i]);
