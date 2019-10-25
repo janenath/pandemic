@@ -24,11 +24,10 @@ $(()=> {
     //creating divs to give current status of each city (whether player is located there, current disease burden)  
         const $cityDivs = [];//array to store city divs to access them for DOM manipulation  
         for (let i=0; i<cityList.length; i++){
-            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).text(`${cityList[i].name}: ${cityList[i].diseaseUnits}`);
+            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).attr('id', `${cityList[i].name}`).text(`${cityList[i].name}: ${cityList[i].diseaseUnits}`);
             $cityDivs.push($cityDiv);
             $cityDivsLocation.append($cityDiv);
         }
-        console.log($cityDivs);
 
 
     //creating buttons in play consoles for gameplay
@@ -166,13 +165,33 @@ $(()=> {
         }
 
     //DRAW INFECTION CARDS
-        drawInfectionCard = () => {
+
+    // const infect = ($currentInfectionCard) => {
+    //     console.log($currentInfectionCard);
+    // }
+        const drawInfectionCard = () => {
             //create jquery variable to access infection modal
             $infectionModal = $('#infectionModal');
             $infectionModalTextbox = $('#infectionModalTextbox');
             //display infection modal when drawing infection cards, append current infection cards to the DOM
             $infectionModal.css('display', 'block');
-            $infectionModalTextbox.prepend($infectionCards[0]);
+            //access the city text of the top infection card
+            const $currentInfectionCard = ($infectionCards[0]);
+            const $infectedCity = $($currentInfectionCard).text();
+            console.log($infectedCity);
+            //find which city in the cityDivs matches the infectedCity, increase its number of disease units
+            $infectionModalTextbox.prepend($currentInfectionCard);
+            // console.log($cityDivs.indexOf($infectedCity.val));
+            for(let i=0; i<$cityDivs.length; i++) {
+                const $eachCityName = $cityDivs[i].attr('id');
+                if ($eachCityName === $infectedCity) {
+                    // const $thisCity = $($eachCityName).parent();
+                    $($cityDivs[i]).text('infected');
+                } 
+        }
+            
+
+
             //remove current infection cards from deck, put it in discard
             $infectionCardsDiscard.push($infectionCards[0]);
             $infectionCards.splice(0, 1);
@@ -181,14 +200,18 @@ $(()=> {
             $closeInfection.on('click', () => {
                 //remove infection cards drawn from the DOM, hide infection modal 
                 $infectionModalTextbox.empty();
+                const $infectionModalText = $('<p>').text('has been infected!');
                 const $closeInfection = $('<button>').attr('id', 'closeInfection').text('close');
+                $infectionModalTextbox.append($infectionModalText);
                 $infectionModalTextbox.append($closeInfection);
                 $infectionModal.css('display', 'none');
                 //trigger next player's turn
             });
         }
 
-    //INFECT
+
+
+
         const infectOnePhase = () => {
             // for(let i=0; i<currentInfectionRate; i++){
                 //draw cards
@@ -197,7 +220,6 @@ $(()=> {
                 $infectOneButton.on('click', () => {
                     $infectOneButton.css('color', 'rgb(51,51,51)');
                     turnCount ++;
-                    console.log(turnCount);
                     playerTurn();
             });
         // }
