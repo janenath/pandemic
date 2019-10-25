@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     font-family: arial;
-    font-size: 30px;
+    font-size: 40px;
     border: 2px rgb(51,51,51) solid;
 }
 h1 {
@@ -19,7 +19,7 @@ h2 {
     margin: 0;
     background: rgb(51,51,51);
     color: white;
-    font-size: 20px;
+    font-size: 40px;
 }
 .container {
     display: grid;
@@ -63,7 +63,7 @@ button {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-template-rows: 300px 400px 1fr;
+    grid-template-rows: 300px 450px 1fr;
     border-left: 5px rgb(51,51,51) solid;
     border-right: 5px rgb(51,51,51) solid;
 }
@@ -210,15 +210,27 @@ img {
 }
 .red {
     background: rgb(160,83,77);
+    color: white;
+    padding-top: 2px;
+    border: 5px white solid;
 }
 .blue {
     background: rgb(95,119,158);
+    color: white;
+    padding-top: 2px;
+    border: 5px white solid;
 }
 .yellow {
     background: rgb(219,191,106);
+    color: white;
+    padding-top: 2px;
+    border: 5px white solid;
 }
 .black {
     background: rgb(51,51,51);
+    color: white;
+    padding-top: 2px;
+    border: 5px white solid;
 }
 
 #infectionModal {

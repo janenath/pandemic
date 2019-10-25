@@ -118,6 +118,8 @@ $(()=> {
 
     //DRAW INFECTION CARDS
 
+
+
         const drawInfectionCard = () => {
             //create jquery variable to access infection modal
             $infectionModal = $('#infectionModal');
@@ -133,10 +135,41 @@ $(()=> {
             for(let i=0; i<$cityDivs.length; i++) {
                 const $eachCityName = $cityDivs[i].attr('id');
                 if ($eachCityName === $infectedCity) {
+                    const findCardOne = () => {
+                        const resultArray = [];
+                        for(let i=0; i<playerOneHand.length; i++) {
+                            let result =($(playerOneHand[i]).text() === $infectedCity);
+                            resultArray.push(result);  
+                        }
+                        function isInArray(value, array) {
+                            return array.indexOf(value) > -1;
+                          }
+                        return isInArray(true, resultArray);
+                    }
+                    const findCardTwo = () => {
+                        const resultArray = [];
+                        for(let i=0; i<playerTwoHand.length; i++) {
+                            let result =($(playerTwoHand[i]).text() === $infectedCity);
+                            resultArray.push(result);  
+                        }
+                        function isInArray(value, array) {
+                            return array.indexOf(value) > -1;
+                          }
+                        return isInArray(true, resultArray);
+                        }
+                        
+                if (findCardOne() === true || findCardTwo() === true) {
+                    $($cityDivs[i]).append('<i>').addClass('fas fa-user-md fa-lg')
+                } else {
                     $($cityDivs[i]).text('');
-                    $($cityDivs[i]).append('<i>').addClass('fas fa-biohazard');
-                } 
+                    $($cityDivs[i]).append('<i>').addClass('fas fa-biohazard fa-lg').attr('style', 'color: white');
+                    $($cityDivs[i]).removeClass(`${cityList[i].color}Border`);
+                    $($cityDivs[i]).addClass(`${cityList[i].color}`);
+                }
             }
+                
+                } 
+            
             //remove current infection cards from deck, put it in discard
             $infectionCardsDiscard.push($infectionCards[0]);
             $infectionCards.splice(0, 1);

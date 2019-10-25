@@ -19,19 +19,6 @@
 //KEEP COUNT OF TURNS FOR ALTERNATING GAMEPLAY  
     let turnCount = 0;
 
-//INFECTION RATE
-    const infectionRate = [2, 2, 2, 3, 3, 4, 4];
-    const currentInfectionRate = infectionRate[0];
-
-//OUTBREAK COUNT
-    let outbreakCount = 0;
-
-//DISEASE UNITS REMAINING
-    let blueUnitsRemaining = 24;
-    let blackUnitsRemaining = 24;
-    let yellowUnitsRemaining = 24;
-    let redUnitsRemaining = 24;
-
 //CURE STATUSES
     let blueCure = false;
     let blackCure = false;
