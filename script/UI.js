@@ -14,8 +14,6 @@ $(()=> {
 
     //creating jquery elements linked to UI page elements, previously created with classes in index.html
         const $cityDivsLocation = $('.cityDivsLocation');
-        const $bottomLeft = $('.bottomLeft');
-        const $bottomRight = $('.bottomRight');
         const $playerOneHeading = $('.playerOneHeading');
         const $playerTwoHeading = $('.playerTwoHeading');
         const $playerOneConsole = $('.playerOneConsole');
@@ -24,7 +22,7 @@ $(()=> {
     //creating divs to give current status of each city (whether player is located there, current disease burden)  
         const $cityDivs = [];//array to store city divs to access them for DOM manipulation  
         for (let i=0; i<cityList.length; i++){
-            const $cityDiv = $('<div>').addClass('cityDiv').addClass(cityList[i].color).addClass(`${cityList[i].color}City`).attr('id', `${cityList[i].name}`).text(`${cityList[i].name}`);
+            const $cityDiv = $('<div>').addClass('cityDiv').css('color', 'black').addClass(`${cityList[i].color}Border`).addClass(`${cityList[i].color}City`).attr('id', `${cityList[i].name}`).text(`${cityList[i].name}`);
             $cityDivs.push($cityDiv);
             $cityDivsLocation.append($cityDiv);
         }
@@ -138,8 +136,7 @@ $(()=> {
                     $($cityDivs[i]).text('');
                     $($cityDivs[i]).append('<i>').addClass('fas fa-biohazard');
                 } 
-        }
-            
+            }
             //remove current infection cards from deck, put it in discard
             $infectionCardsDiscard.push($infectionCards[0]);
             $infectionCards.splice(0, 1);
@@ -153,13 +150,10 @@ $(()=> {
                 $infectionModalTextbox.append($infectionModalText);
                 $infectionModalTextbox.append($closeInfection);
                 $infectionModal.css('display', 'none');
-                //trigger next player's turn
             });
         }
 
         const infectOnePhase = () => {
-            // for(let i=0; i<currentInfectionRate; i++){
-                //draw cards
                 $infectOneButton.on('click', drawInfectionCard);
                 //make infection button text disappear after clicking
                 $infectOneButton.on('click', () => {
@@ -167,17 +161,14 @@ $(()=> {
                     turnCount ++;
                     playerTurn();
             });
-        // }
     }
         const infectTwoPhase = () => {
-            // for(let i=0; i<currentInfectionRate; i++){
-                //draw cards
+                //draw card
                 $infectTwoButton.on('click', drawInfectionCard);
                 //make infection button text disappear after click
                 $infectTwoButton.on('click', () => {
                     $infectTwoButton.css('color', 'rgb(51,51,51)');
                     turnCount++;
-                    console.log(turnCount);
                     playerTurn();
             });
         }
@@ -202,7 +193,7 @@ const playerTurn = () => {
         });
         infectOnePhase();
 
-    } else{
+    } else {
         //toggle player turn headings
         $($playerOneHeading).css('display', 'none');
         $($playerTwoHeading).css('display', 'block');
