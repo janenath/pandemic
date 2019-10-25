@@ -173,18 +173,3 @@ const infectionCards = [
 const infectionCardsList = [
     atlanta, essen, sanFrancisco, paris, stPetersburg, madrid, milan, london, montreal, newYork, chicago, washington, tehran, istanbul, riyadh, kolkata, moscow, cairo, delhi, baghdad, karachi, mumbai, chennai, algiers, lima, santiago, buenosAires, khartoum, saoPaulo, johannesburg, miami, lagos, kinshasa, mexicoCity, bogota, losAngeles, manila, jakarta, bangkok, hoChiMinhCity, osaka, sydney, tokyo, shanghai, taipei, beijing, hongKong, seoul
  ];
-
-const initMap = () => {
-    const mapCenter = {lat: 22.518362, lng: 7.28095};
-    const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 0,
-    center: mapCenter
-    });
-
-    const sfCoordinates = {lat: 37.774929, lng: -122.419418};
-    const sfMarker = new google.maps.Marker({
-     position: sfCoordinates,
-     map: map,
-     title: 'hello world'
- })
-}
