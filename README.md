@@ -7,8 +7,17 @@ Pandemic is a cooperative strategy game where multiple players work to cure four
 
 **Link to site:** https://janenath.github.io/pandemic
 
-Technologies used:
-- 
+### Game summary:
+48 worldwide cities are displayed on a central console. Four diseases are endemic in the game universe, each represented by a different color (yellow, blue, black, and red). The goal of the game is to cure all four diseases before one of them takes over the world. Players work together to accomplish this goal: humanity's fate is in the balance!
+
+Players are dealt a random starting hand of four cards each. Each card represents a city. Toggling headers and button texts cue gameplay. On each turn, the player clicks the "Draw Cards" button to draw a new random card to add to their hand. Next, they click the "Infect" button to infect a new city. If either player has the card for the infected city in their hand, they turn this card in to treat the disease (indicated by doctor symbol). Otherwise, the infected city remains infected (indicated by a biohazard symbol). Randomly inserted throughout the player deck are Epidemic cards, which create a bonus triple infection instead of supplying a new city card. The game ends when one of the following conditions is met:
+**Win Condition:** each disease (yellow, blue, black, and red) is cured. This is accomplished by players collecting sets of five city cards in the respective colors
+**Lose Conditions:** the 12 countries afflicted by any single disease are all wiped out, leaving this disease to take over the world, OR the players run out of player cards.
+
+### Technologies used:
+- HTML
+- CSS: Grid, Flexbox, modals, animation, and media query
+- JavaScript: loops, math methods/randomization, array methods, combined datatypes, event listeners, callback and recursive functions, manipulating DOM with jQuery
 ___
 ## Lessons/Ongoing Issues:
 ### Creating a responsive, interactive map in the browser
