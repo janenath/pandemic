@@ -12,7 +12,6 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-  <script src="script/app.js"></script>
   <script src="script/data.js"></script>
   <script src='script/UI.js'></script>
 
@@ -20,12 +19,44 @@
 <body>
   <div id='infectionModal'>
     <div id='infectionModalTextbox'>
-        <p>has been infected!</p>
+      <p>INFECTION!</p>
       <br>
       <button id='closeInfection'>Close</button>
     </div>
   </div>
-  <div class='instructionsModal'></div>
+  <div id='instructionsModal'>
+      <div id='instructionsModalTextbox'>
+          <h1>PANDEMIC INSTRUCTIONS</h1>
+          <p>48 worldwide cities are displayed on a central console. Four diseases are endemic in the game universe, each represented by a different color (yellow, blue, black, and red). The goal of the game is to cure all four diseases before one of them takes over the world. Players work together to accomplish this goal: humanity's fate is in the balance!
+            <br>
+              Players are dealt a random starting hand of four cards each. Each card represents a city. Toggling headers and button texts cue gameplay. On each turn, the player clicks the "Draw Cards" button to draw a new random card to add to their hand. Next, they click the "Infect" button to infect a new city. If either player has the card for the infected city in their hand, they turn this card in to treat the disease (indicated by doctor symbol). Otherwise, the infected city remains infected (indicated by a biohazard symbol). Randomly inserted throughout the player deck are Epidemic cards, which create a bonus triple infection instead of supplying a new city card. The game ends when one of the following conditions is met: 
+              <br>
+              Win Condition: each disease (yellow, blue, black, and red) is cured. This is accomplished by players collecting sets of five city cards in the respective colors 
+              <br>
+              Lose Conditions: the 12 countries afflicted by any single disease are all wiped out, leaving this disease to take over the world, OR the players run out of player cards.</p>
+          <br>
+          <button id='closeInstructions'>Close</button>
+        </div>
+  </div>
+  <div id='epidemicModal'>
+    <div id='epidemicModalTextbox'>
+        <h1>EPIDEMIC</h1>
+        <p>Three cities will be infected!</p>
+        <button id='closeEpidemic'>Close</button>
+    </div>
+  </div>
+  <div id='winModal'>
+    <div id='winModalTextbox'>
+      <h3>YOU WIN! THE WORLD IS SAVED!</h3>
+      <button id='closeWin'>Close</button>
+    </div>
+  </div>
+  <div id='loseModal'>
+      <div id='loseModalTextbox'>
+        <h3>YOU LOSE! THE WORLD IS OVERCOME BY DISEASE!</h3>
+        <button id='closeLose'>Close</button>
+      </div>
+    </div>
   <div class='container'>
     <div class='left'>
       <div class='playerOneHeading'>

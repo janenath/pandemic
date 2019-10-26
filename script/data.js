@@ -3,12 +3,6 @@
 //============================================
 
 //========================================
-//PLAYER ICONS
-//========================================
-const $playerOneIcon = $('<i>').addClass('fas fa-user-nurse fa-lg');
-const $playerTwoIcon = $('<i>').addClass('fas fa-user-md fa-lg');
-
-//========================================
 //CITY METADATA
 //========================================
     const atlanta = {name: 'Atlanta', class: 'atlanta', color: 'blue', diseaseUnits: 0, researchStation: true, moveOptions: ['chicago', 'washington', 'miami']};
@@ -45,7 +39,7 @@ const $playerTwoIcon = $('<i>').addClass('fas fa-user-md fa-lg');
     const lagos = {name: 'Lagos', class: 'lagos', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['khartoum', 'kinshasa', 'saoPaulo']};
     const kinshasa = {name: 'Kinshasa', class: 'kinshasa', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['lagos', 'khartoum', 'johannesburg']};
     const mexicoCity = {name: 'Mexico City', class: 'mexicoCity', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['losAngeles', 'chicago', 'miami', 'bogota', 'lima']};
-    const bogota = {name: 'Bogota', class: 'bogota', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['miami', 'mexicoCity', 'lima', 'buenosAires', 'saoPaulo']};
+    const bogota = {name: 'Bogotá', class: 'bogota', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['miami', 'mexicoCity', 'lima', 'buenosAires', 'saoPaulo']};
     const losAngeles = {name: 'Los Angeles', class: 'losAngeles', color: 'yellow', diseaseUnits: 0, researchStation: false, moveOptions: ['sanFrancisco', 'chicago', 'mexicoCity', 'sydney']};
     const manila = {name: 'Manila', class: 'manila', color: 'red', diseaseUnits: 0, researchStation: false, moveOptions: ['sydney', 'sanFrancisco', 'taipei', 'hongKong', 'hoChiMinhCity']};
     const jakarta = {name: 'Jakarta', class: 'jakarta', color: 'red', diseaseUnits: 0, researchStation: false, moveOptions: ['chennai', 'bangkok', 'hoChiMinhCity', 'sydney']};

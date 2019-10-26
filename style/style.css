@@ -1,13 +1,13 @@
 html, body {
     margin: 0;
     font-family: arial;
-    font-size: 40px;
+    font-size: 32px;
     border: 2px rgb(51,51,51) solid;
 }
 h1 {
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
-    font-size: 180px;
+    font-size: 80px;
     font-weight: bold;
     margin: 0 0 0 20px;
 }
@@ -21,6 +21,10 @@ h2 {
     color: white;
     font-size: 40px;
 }
+h3 {
+    padding: 50px;
+    line-height: 1.5;
+}
 .container {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -31,30 +35,36 @@ h2 {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-template-rows: 10% 70% 20%;
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
     justify-self: center;
     width: 100%;
+    grid-template-rows: 10% 70% 20%;
 }
 .playerOneHeading {
     grid-row-start: 1;
     grid-row-end: 2;
-    height: 100px;
+    height: 100%;
 }
 .handOne {
     grid-row-start: 2;
     grid-row-end: 3;
+    align-self: end;
+    overflow-y: auto;
 }
 .playerOneConsole {
     grid-row-start: 3;
     grid-row-end: 4;
     justify-self: center;
+    align-self: end;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
 }
 button {
     background-color: rgb(51,51,51);
     font-family: 'Titillium Web', sans-serif;
     color: rgb(51,51,51);
     border: none;
-    width: 515px;
+    width: 100%;
     height: 70px;
     margin: 2px auto;
     font-size: 18px;
@@ -63,7 +73,7 @@ button {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-template-rows: 300px 450px 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
     border-left: 5px rgb(51,51,51) solid;
     border-right: 5px rgb(51,51,51) solid;
 }
@@ -165,9 +175,9 @@ button {
     display: grid;
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-template-rows: 10% 70% 20%;
     justify-self: center;
     width: 100%;
+    grid-template-rows: 10% 70% 20%;
 }
 .playerTwoHeading {
     grid-row-start: 1;
@@ -177,11 +187,16 @@ button {
 .handTwo {
     grid-row-start: 2;
     grid-row-end: 3;
+    align-self: end;
+    overflow-y: auto;
 }
 .playerTwoConsole {
     grid-row-start: 3;
     grid-row-end: 4;
     justify-self: center;
+    align-self: end;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
 }
 img {
     width: 99%;
@@ -246,7 +261,7 @@ img {
 }
 #infectionModalTextbox {
 	background-color: white;
-	height: 30%;
+	height: 50%;
 	width: 50%;
     border-radius: 2px;
     line-height: 20px;
@@ -256,3 +271,116 @@ img {
 #closeInfection {
     color: white;
 }
+
+#epidemicModal {
+    background-color: rgb(160,83,77);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#epidemicModalTextbox {
+	background-color: white;
+	height: 50%;
+	width: 50%;
+    border-radius: 2px;
+    line-height: 20px;
+    margin: 30px auto;
+    text-align: center;
+}
+#epidemicModalTextbox h1 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+#closeEpidemic {
+    color: white;
+}
+
+#instructionsModal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#instructionsModalTextbox {
+	background-color: white;
+	height: 70%;
+    width: 70%;
+    padding: 30px;
+    border-radius: 2px;
+    line-height: 20px;
+    margin: 30px auto;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 20px;
+}
+#instructionsModalTextbox h1 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+#closeInstructions {
+    color: white;
+}
+
+#winModal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#winModalTextbox {
+	background-color: white;
+	height: 50%;
+	width: 50%;
+    border-radius: 2px;
+    line-height: 20px;
+    margin: auto;
+    text-align: center;
+}
+#closeWin {
+    color: white;
+}
+
+#loseModal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+    display: none;
+}
+#loseModalTextbox {
+	background-color: white;
+	height: 50%;
+	width: 50%;
+    border-radius: 2px;
+    line-height: 20px;
+    margin: auto;
+    text-align: center;
+}
+#closeLose {
+    color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    iframe {
+      width: 50%;
+    }
+  }
